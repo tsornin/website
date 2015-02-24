@@ -1,0 +1,190 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+	<h3>Useful Links</h3>
+	<h4>WEBSITE UNDER CONSTRUCTION</h4>
+	<p>
+	Links to tutorials and resources I have found useful when writing my physics engine.
+	</p>
+
+
+
+<DL>
+<h5>Various C++ Tutorials</h5>
+	<DT>
+	<a href="http://www.learncpp.com/">
+	Learn C++</a>
+	</DT>
+	
+	<DT>
+	<a href="http://www2.research.att.com/~bs/bs_faq2.html#%22static-cast%22">
+	Stroustrup: C++ Style and Technique FAQ</a>
+	</DT>
+		<DD>C++ style from The Man himself.</DD>
+	
+	<DT>
+	<a href="http://www.parashift.com/c++-faq-lite/index.html">
+	C++ FAQ</a>
+	</DT>
+		<DD>Cline answers all your C++ questions.</DD>
+	
+	<DT>
+	<a href="http://www.cs.caltech.edu/courses/cs11/material/cpp/donnie/cpp-ops.html">
+	C++ Operator Overloading Guidelines</a>
+	</DT>
+	
+	<DT>
+	<a href="http://www.horstmann.com/ccj2/ccjapp3.html">
+	Moving from Java to C++</a>
+	</DT>
+		<DD>C++ for Java-to-C++ converts.</DD>
+</DL>
+
+<DL>
+<h5>SDL and OpenGL</h5>
+	<DT>
+	<a href="http://www.libsdl.org/">
+	Simple Directmedia Layer</a>
+	</DT>
+	
+	<DT>
+	<a href="http://www.lazyfoo.net/SDL_tutorials/">
+	Lazy Foo' Productions</a>
+	</DT>
+	
+	<DT>
+	<a href="http://osdl.sourceforge.net/main/documentation/rendering/SDL-openGL.html">
+	OSDL - SDL corner - Using OpenGL with SDL</a>
+	</DT>
+	
+	<DT>
+	<a href="http://www.glprogramming.com/red/about.html">
+	OpenGL Programming Guide</a>
+	</DT>
+		<DD>The Red Book online!</DD>
+</DL>
+
+<DL>
+<h5>Game Engine</h5>
+	<DT>
+	<a href="http://gamedevgeek.com/tutorials/managing-game-states-in-c/">
+	Managing Game States in C++ « Game Dev Geek</a>
+	</DT>
+		<DD>A nice design for a game engine with states.
+		The implementation given has a bug though:
+		<code>CGameEngine::</code>
+		<code>HandleEvents</code>, <code>Update</code>, and <code>Draw</code>
+		are not guarded by a <code>( !states.empty() )</code> check.
+		<code>CGameState::Update</code> might use <code>CGameEngine::PopState</code> to empty the stack
+		(very possible since it could be the last state in the stack).
+		Even if the state knows it's going to be cleaned up and doesn't do anything else,
+		<code>CGameEngine::Update</code> will finish, and then
+		<code>CGameEngine::Draw</code> will look for a state on the stack and crash.
+		One solution would be to add the checks;
+		another would be queueing up state actions and performing them at the end of each game loop.</DD>
+	<DT>
+	<a href="http://gafferongames.com/game-physics/fix-your-timestep/">
+	Fix Your Timestep! « Gaffer on Games</a>
+	</DT>
+	<DT>
+	<a href="http://dewitters.koonsolo.com/gameloop.html"/>
+	deWiTTERS Game Loop Article</a>
+	</DT>
+</DL>
+
+<DL>
+<h5>2D Polygon Physics</h5>
+	<DT>
+	<a href="http://www.metanetsoftware.com/technique/tutorialA.html">
+	N Tutorial A - Collision Detection and Response</a>
+	</DT>
+		<DD>Metanet Software on the Separating Axis Theorem.
+		Most SAT tutorials just have diagrams, but this page has
+		interactive click-and-drag demonstrations of the SAT in action.</DD>
+	
+	<DT>
+	<a href="http://chrishecker.com/Rigid_Body_Dynamics">
+	Rigid Body Dynamics - Chris Hecker's Website</a>
+	</DT>
+		<DD>Hecker on 2D rigid body physics and
+		the derivation of the 2D impulse-based collision response formulas.</DD>
+	
+	<DT>
+	<a href="http://en.wikipedia.org/wiki/Collision_response#Impulse-Based_Contact_Model">
+	Collision response - Wikipedia, the free encyclopedia</a>
+	</DT>
+		<DD>Wikipedia on the same impulse formulas.</DD>
+	
+	<DT>
+	<a href="http://www.hakenberg.de/diffgeo/collision_resolution.htm">
+	Rigid Body Collision Resolution</a>
+	</DT>
+		<DD>For comparison, the derivation of the 3D impulse-based collision response formulas.</DD>
+</DL>
+
+<DL>
+<h5>Verlet Particle and Soft-body Physics</h5>
+	<DT>
+	<a href="http://www.gamasutra.com/resource_guide/20030121/jacobson_01.shtml">
+	Gamasutra - Features - "Advanced Character Physics" [01.21.03]</a>
+	</DT>
+		<DD>Jakobsen on Verlet simulation.
+		Beyond soft-body objects such as cloth, plants and ragdolls,
+		this article also proposes simulating rigid bodies with a constraint technique.
+		</DD>
+</DL>
+
+<DL>
+<h5>Spatial Indexing</h5>
+	<DT>
+	<a href="http://donar.umiacs.umd.edu/quadtree/index.html">
+	Spatial Index Demos</a>
+	</DT>
+		<DD>Samet and Brabec on spatial index algorithms and data structures. </DD>
+</DL>
+
+<DL>
+<h5>Web Development</h5>
+	<DT>
+	<a href="http://perishablepress.com/press/2006/01/10/stupid-htaccess-tricks/">
+	Stupid htaccess Tricks • Perishable Press</a>
+	</DT>
+	
+	<DT>
+	<a href="http://www.alistapart.com/articles/fauxcolumns/">
+	A List Apart: Articles: Faux Columns</a>
+	</DT>
+	
+	<DT>
+	<a href="http://sixrevisions.com/css/a-comprehensive-guide-to-css-resets/">
+	A Comprehensive Guide to CSS Resets</a>
+	</DT>
+</DL>
+
+
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

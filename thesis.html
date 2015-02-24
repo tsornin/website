@@ -1,0 +1,292 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+
+<h3>Thesis</h3>
+<h4>May 2012</h4>
+<p>
+Undergraduate thesis for CS 379H.
+</p>
+
+
+<h5>Abstract</h5>
+<p>
+Soft bodies are often modeled as a system of point-masses and constraints.
+Existing techniques produce very convincing physically-based animation.
+TODO: Common examples include string and cloth.
+Moreover, these techniques are simple, efficient and are fast enough for real-time applications.
+
+Here, we use these same basic components (massses and constraints) to first develop angular constraints,
+and then combine the physics simulation of [1] with the plant generation methods of [2, Ch. 1]
+to build physically-animated plants, with a focus on producing an interactive real-time result.
+</p>
+
+
+<h5>Introduction</h5>
+<p>
+Prior work: string, cloth, World of Goo structures. Did I see a chain in Mario 3?
+Plants are a staple in games, and they could be great eye candy.
+We can apply the same techniques to plants?
+This research targets real-time applications (video games).
+As such, physics priorities are stability and speed, instead of accuracy and stability.
+Scientific simlations: accuracy, then stability.
+Interactive simulations: prioritize stability, then speed.
+This paper covers 2D trees only.
+</p>
+
+
+<h5>Euler</h5>
+<p>
+The simplest fastest timestep is basic Euler.
+But it has problems with stability.
+Sometimes it's okay — sometimes we don't care about stability, like cannon balls.
+Other times we'd like things to be stable, and Euler won't work.
+Examples:
+1. integrating an orbit — alaways diverges!
+This is clear if we examine the field lines.
+Forward Euler step makes the particle hop across [curves]!
+2. high frequency (stiff) springs - explodes!
+A spring with high K and big timestep will overshoot to more than displacement.
+There are several ways to cope with this...
+</p>
+
+
+<h5>Verlet</h5>
+<p>
+Verlet is cheap like Euler (unlike higher order things like RK4).
+Each timestep: forces, relax.
+Velocity is implicit, so relaxation implicitly modifies the velocity too.
+On the next timestep, the velocity is already correct.
+[ Examples ]
+</p>
+
+
+<h5>Distance Constraints</h5>
+<p>
+These are covered in Jakobsen [1].
+Just a few things to add:
+1. "Power" of a constraint.
+2. Strings look bad with hard constraints, so let's do hard, push, and pull constraints.
+</p>
+
+
+<h5>Angular Constraints</h5>
+<p>
+[ coming soon! ]
+</p>
+
+
+<h5>Lindenmayer Systems and the Physics Engine</h5>
+<p>
+Now that we have the physics necessary to create soft bodies,
+we need a way to generate tree structures.
+We use L-systems as detailed in [2 Ch. ???] to describe the tree's growth.
+We need up to branching L-systems from [2] (TODO: stochastic L-systems).
+</p>
+
+<p>
+A naive approach, the "passive" or "meta" L-system,
+would generate a string from a set of rules using a number of iterations,
+and then build the entire physics structure from that string.
+This gives us the whole tree structure, but doesn't exploit the "history" aspect of the L-system.
+A better approach would be an "active" L-system,
+where we record each character in the string's associated physics object(s),
+and are able to dynamically grow the tree.
+</p>
+
+<p>
+In an edge based L-system such as the Koch snowflake generator, the edges, 'F', change.
+But in the example node based L-systems given (somewhere in Ch.1 Fig. ???-DEF),
+shape comes from the nodes. The only 'F' rule is: (F -> FF).
+This is used to model plant growth [plant terminology?].
+As plants grow, segments get longer [terminology].
+We don't really want to use the growth rule (F -> FF).
+Besides the fact that it's a crude way to simulate growth,
+using it with the physics means that it also adds a joint
+and makes the plant more computationally intensive and also more wobbly.
+Without the growth rule (F -> FF), we will instead ask the physics engine
+to increase the length of the constraint directly.
+</p>
+
+<p>
+As shown above, using the physics engine with the L-system brings about some changes.
+Some features of the L-system will be discarded,
+so that by the time we're done,
+we won't have a general language anymore.
+So, we will drop the full "formal language" capabilities of the L-system,
+and only have rules dealing with nodes, which will be labeled with numbers.
+Instead of running iterations on a generated string,
+we expand the known nodes by acting on their associated physics object(s) each iteration.
+The physics engine provides some other features.
+By modifying the K, we can also make bamboos wilt and stand on command,
+perhaps in response to modeled water conditions.
+</p>
+
+<p>
+The 'F' in an L-system correponds to "forward". This models one segment of a plant.
+Correspondingly, the physics engine creates a new VL, DC, and AC for an 'F'.
+VL's and DC's correspond to <em>nodes</em> and <em>internode</em> of the plant.
+</p>
+
+<p>
+We use three separate mechanisms to model the plant's growth:
+1. length, 2. mass, 3. branching.
+Let's start with a discrete model:
+With every iteration of the L-system, the length and mass are multiplied by some constant.
+Empirically, trees are not top-heavy.
+We should choose an appropriate multiplier.
+For example, for a single shoot, we could halve the mass with every step upwards.
+This effects a geometric series on the masses so the total mass of the rest of a shoot
+never overpowers the originating node.
+</p>
+
+<p>
+Implement a turtle to build the tree using physics.
+Since AC's are created against two DC's, the turtle needs to sit on a DC
+(not a problem, except that we have to start with a base DC)
+</p>
+
+
+<h5>Bamboo</h5>
+<p>
+Now that we have both the physics and generation machinery, we can build a plant.
+Let's develop an L-system for a bamboo.
+Real bamboos have three levels of recursion.
+Level 0 branch: the main stalk.
+Level 1 branch: two on each segment of the main stalk, alternating 180° on each stalk.
+(Figure: top and side view illustrations)
+Level 2 branch: two on each segment of level 1, I think.
+In 2D, we simplify and just do an alternating on Level 1.
+We also don't use Level 2.
+</p>
+
+<ol>Rules:
+	<li>0_L -> F_.5 [ + F_.1 1_a ] 0_R</li>
+	<li>0_R -> F_.5 [ - F_.1 1_a ] 0_L</li>
+	<li>1_A -> 1_B</li>
+	<li>1_B -> F_.5 1_A</li>
+</ol>
+
+<p>
+Initial: 0_L
+The result: [ Figure: Bamboo L-system ]
+There's a lot going on with this setup.
+Rules 1 and 2 create an alternating branching pattern.
+But we feel like the branches are growing too fast.
+Rules 3 and 4 show a sort of state machine on 1_A and 1_B nodes.
+1_A nodes take one iteration to mature into 1_B nodes before sprouting a segment.
+This makes them grow once every two iterations.
+Also note the mass multipliers tagged onto 'F' symbols.
+The shoot growth in Rules 1 and 2 is halved, as shown above.
+The branches of Rules 1 and 2 are empirically chosen to .1 mass.
+The shoot growth of level 1 branches (Rule 4) is also halved.
+</p>
+
+
+<h5>Bi-tree</h5>
+<p>
+A bamboo has a very unique structure. Let's develop a more boring tree.
+</p>
+
+<ol>Rules:
+	<li>0 -> [ + F_.25 0 ] [ - F_.25 0 ]</li>
+</ol>
+
+<p>
+Initial: F 0
+Keeping in mind that we want to avoid top-heaviness,
+masses are quartered going upwards, since a node produces two nodes.
+This produces what looks like a perfect binary tree.
+The "Bi-tree" is very regular and looks artificial.
+It will benefit greatly from stochastic L-systems [2 Ch. ???]...
+</p>
+
+
+<h5>Pine</h5>
+
+
+<h5>Plum</h5>
+
+
+<h5>Palm</h5>
+
+
+<h5>Willow</h5>
+<p>
+Let's build another plant! This one uses strings more than AC-columns.
+How does the L-system design differ from bamboos?
+</p>
+
+
+<h5>Garden Maintenance</h5>
+<p>
+Burn, chop, and rain (wind) on those plants.
+Wind is probably the easiest effect to implement.
+We could use a Stam fluid, or just random numbers.
+We already have masses, too!
+Chopping plants requires some collision support from the physics engine.
+Make sure to break all DC's in an AC when either of the main DC's break.
+Devising a good burning system is probably the hardest problem here.
+</p>
+
+
+<h5>Future Work</h5>
+<p>
+Obvious extension: three-dimensions. 3D is harder.
+More constraints to do an AC; also, we need to consider twisting of the structure.
+There are also more constants. L-system "turtle" needs to move in 3D.
+Rendering is harder, although easier if we do NPR.
+Also, some extra problems show up, like branch tangling
+(we avoided this in 2D by totally ignoring it, since it looks like a projection from 3D).
+</p>
+
+
+<h5>Citations</h5>
+<p>
+<cite>
+<ol>
+	<li>
+	T. Jakobsen, "Advanced Character Physics," in Game Developers Conf. Proc., San Jose, 2011.
+	</li>
+	<li>
+	P. Prusinkiewicz and A. Lindenmayer, "Graphical modeling using L-systems", in <em>The Algorithmic Beauty of Plants</em>, New York, NY: Springer-Verlag, 1996.
+	</li>
+	<li>
+	Manavi paper?
+	</li>
+</ol>
+</cite>
+</p>
+
+<h5>Schedule</h5>
+<ul>
+	<li>20-26 Sept 2011: reading ABOP, developing L-system and physics coordination</li>
+	<li>27-3 Oct 2011: coding a tree generator</li>
+	<li>???: tree-DAG and tree-split</li>
+</ul>
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

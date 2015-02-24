@@ -1,0 +1,68 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+	<h3>3D Modeling</h3>
+	<h4>February 2007 - June 2008</h4>
+	
+	<h5>"Curiosity"</h5>
+	<a href="img/3d/curiosity.jpg" target="_new">
+		<img src="img/3d/curiosity-thumb.jpg" alt="Thumbnail">
+	</a>
+	<p>
+	Modeled after the old version of the
+	<a href="http://www.ikea.com/us/en/catalog/products/20128795" target="_new">IKEA Antifoni</a>
+	lamp. Modeled in
+	<a href="http://www.blender.org/">Blender</a>,
+	rendered with
+	<a href="http://www.yafaray.org/">Yafray</a>.
+	</p>
+	
+	<h5>"Potato Temple"</h5>
+	<a href="img/3d/potatotemple.jpg" target="_new">
+		<img src="img/3d/potatotemple-thumb.jpg" alt="Thumbnail">
+	</a>
+	<br>
+<?php // Potato temple thumbnails
+for ( $i = 1; $i <= 4; $i++ ) {
+	echo '<a href="img/3d/pt' . $i . '.jpg"><img src="img/3d/pt' . $i . '-thumb.jpg" alt="Thumbnail"></a>' . "\n";
+}
+?>
+	<p>
+	Modeled in
+	<a href="http://www.daz3d.com/i/software/bryce/">Bryce 5.5</a>.
+	</p>
+	
+	<h5>"Porygon"</h5>
+	<a href="img/3d/porygon.png" target="_new">
+		<img src="img/3d/porygon-thumb.png" alt="Thumbnail">
+	</a>
+	<p>
+	"Artifact" for CS 384G,
+	<a href="http://www.cs.utexas.edu/~fussell/courses/cs384g/projects/raytracing/handout.shtml">Project 2: Ray Tracing</a>.
+	</p>
+	
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

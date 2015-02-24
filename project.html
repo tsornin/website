@@ -1,0 +1,325 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+
+<h3>CS 384G - Final Project</h3>
+<h4>December 2011</h4>
+<p>
+Final project report for CS 384G:
+"Physically-based animation of L-system plants"
+</p>
+
+
+<h5>Abstract</h5>
+<p>
+<em>
+Soft bodies are often modeled as systems of point-masses and constraints.
+Existing techniques produce very convincing animations of string and cloth;
+furthermore, these techniques are simple and fast enough for real-time applications.
+This project uses the same basic components (masses and constraints)
+to build physically-animated plants, with a focus on interactivity.
+</em>
+</p>
+
+
+<h5>Introduction</h5>
+<p>
+Soft bodies are painstakingly hard to animate by hand &mdash;
+but easy to simulate with computers.
+The huge advantage of a real-time simulation is interactivity.
+</p>
+
+<p>
+[1] is a well-known paper that describes a method for soft-body animation.
+Jakobsen describes a Verlet mass/constraint scheme geared toward real-time applications;
+the results are fast and very stable, at the cost of accuracy.
+This is exactly what we are looking for in an interactive simulation: stability, then speed.
+[1] also gives examples of string and cloth simulations as well as "rigid bodies",
+and finally, an entire ragdoll formed from the two basic components of masses and constraints.
+In general,
+the structure of the simulated object is represented by a collection of point-masses,
+which are then connected by distance constraints,
+which apply spring-like forces to their end-points.
+</p>
+
+<p>
+We can use these same techniques to model plant vegetation.
+Generation of plant structures has been studied extensively in [2].
+In this project, we will combine the structure of [2] with the physics of [1].
+Point-masses and distance constraints will correspond to
+nodes and internodes (stems) of the plant, respectively.
+In fact, the SimTree application of [3] does just this.
+Howver, we will not only run the physics simulation,
+but also attach a modified L-system from [2] to the physics system.
+This gives real-time generation as well as simulation plants;
+the plants can grow as the simulation is running.
+</p>
+
+<h5>Euler</h5>
+<p>
+The simplest numerical integration scheme is Euler integration.
+While simple, it suffers from several stability issues:
+for example, springs simulated 
+However, since velocity is explicit,
+it's easy to simulate bouncing with Euler-integrated particles.
+We can use these particles for fast unstable objects, such as particle emitters.
+In this project, raindrops will be simulated using Euler integration.
+</p>
+
+
+<h5>Verlet</h5>
+<p>
+Verlet integration is almost as cheap as Euler.
+However, as shown in [1], it produces very stable simulations when used with constraints.
+</p>
+
+
+<h5>Distance Constraints</h5>
+<p>
+[ coming soon! }
+</p>
+
+
+<h5>Angular Constraints</h5>
+<p>
+[ coming soon! ]
+</p>
+
+
+<h5>Lindenmayer Systems and the Physics Engine</h5>
+<p>
+We now have the physics to simulate soft bodies in hand,
+but we also need a way to generate tree structures.
+Lindenmayer systems (L-systems) are parallel rewriting systems
+used to model the growth of plant morphology.
+
+<!-- EXPLAIN L WORDS AND L TURTLE -->
+
+We use branching L-systems, detailed in [2],
+to describe the tree's structure and growth.
+</p>
+
+<p>
+There are two ways we could attach the L-system to the physics engine.
+A "passive" approach would generate the entire tree structure description
+from a given set of rules using a number of iterations,
+and then build the entire tree with physics objects using that result.
+This gives us an entire tree.
+However, it doesn't exploit the "growth" aspect of L-systems.
+</p>
+
+<p>
+We can do better by using an "active" L-system,
+which keeps track of the physics objects corresponding to growing nodes of the tree
+and attaches new physics objects for that node when signaled to grow.
+While the "passive" system built the entire tree with one turtle,
+the "active" system stores one turtle per node,
+and each turtle stores a distance constraint.
+The L-system word 'F' (which stands for "forward") models one segment of a plant.
+To express this plant segment with physics objects,
+we create a new Verlet mass and attach it to the node
+using a distance constraint and an angular constraint.
+</p>
+
+<p>
+In an edge based L-system such as the Koch snowflake generator of [2, Ch. 1.1],
+the structure arises from changing the 'F' edges.
+But in the example node-based L-system given in [2, Figure 1.24],
+the shape of the tree is solely given by the nodes:
+the only 'F' rule is "F -> FF", which is used to model the growth of the plant.
+This is a crude way to simulate growth; it also creates an extra node.
+This is undesirable, as simulating an extra node requires more computation,
+and also makes the simulation more wobbly.
+Without the growth rule "F -> FF",
+we will instead ask the physics engine to increase the length of the constraint directly.
+</p>
+
+<p>
+Additional parameters are needed for the L-system word 'F'.
+When creating physics objects,
+we need to know the length of the distance constraint and the weight of the point-mass.
+We specify these values relative to the node we're building on top of.
+It is important to choose appropriate multipliers.
+If we weight all point-masses the same,
+the tree will become top-heavy and collapse.
+As an example, consider a "tree" which is just a single stick.
+To keep it stable, we should choose a multiplier of 0.5.
+This effects a geometric series on the masses going upward,
+so the total mass of the upper portion of the stick
+is never more than that of a single mass on the lower portion of the stick.
+<!--
+Interestingly, this looks very similar to
+LEONARDO DA VINCI'S RULE for trees:
+http://www.physorg.com/news/2011-11-uncovering-da-vinci-trees.html
+-->
+</p>
+
+<p>
+As shown above, we have made some modifications to the L-system
+to make it better suited to driving the physics engine.
+Some features of the L-system are delegated to the physics engine,
+so we don't really have a full "formal language" anymore.
+The physics engine also provides some other interesting features.
+By modifying the power of the constraints,
+we can make trees wilt and stand on command
+(perhaps in reponse to modeled water conditions).
+</p>
+
+
+<h5>Bamboo Tree</h5>
+<p>
+Now that we have machinery for both physics simulation and tree structure,
+we can design an L-system that produces a desired plant structure.
+Real bamboo is observed to have several levels of recursion.
+<!--
+Level 0 branch: the main stalk.
+Level 1 branch: two on each segment of the main stalk, alternating 180° on each stalk.
+(Figure: top and side view illustrations)
+Level 2 branch: two on each segment of level 1, I think.
+-->
+However, in 2D, we simplify the structure to just a single shoot upwards
+which produces auxiliary shoots alternating on the left and right.
+The first parameter to 'F' ("forward") is the length multiplier;
+the second parameter is the mass multiplier.
+The parameter to 'T' ("turn") is the angle in degrees.
+The parameter to 'N' ("add node") is the name of the new node.
+</p>
+
+<ol>Rules:
+	<li>"left" -> "F 0.98 0.5 [ T 40 F 0.5 0.1 N one_a ] N right"</li>
+	<li>"right" -> "F 0.98 0.5 [ T -40 F 0.5 0.1 N one_a ] N left"</li>
+	<li>"one_a" -> "N one_b"</li>
+	<li>"one_b" -> "F 0.95 0.5 N one_a"</li>
+	<li>"start" -> "F 1.0 0.5 N left"</li>
+</ol>
+
+<p>
+The first two rules produce the main shoot and start off the alternating auxiliary shoots.
+Note that the masses of the main shoot are halved at each step, as discussed previously.
+The auxiliary shoots are given a very small mass multiplier (0.1)
+so they do not interfere significantly with the weight of the tree.
+The third rule is an (ab)use of the L-system as a state machine,
+slowing the growth rate of the auxiliary shoots to every other iteration.
+The fourth rule lengthens the auxiliary shoots.
+</p>
+
+
+<h5>Binary-Tree Tree</h5>
+<p>
+A bamboo has a very unique structure. Let's develop a more boring tree.
+</p>
+
+<ol>Rules:
+	<li>"node" -> [ T 20 F 0.8 0.25 ] [ T -20 F 0.8 0.25 ]</li>
+	<li>"start" -> "F 1.0 0.5 node"</li>
+</ol>
+
+<p>
+Keeping in mind the need to avoid top-heaviness,
+masses are quartered going upwards, since each node produces two nodes.
+The result is an artificial-looking perfect binary tree.
+While this is a boring tree by itself,
+it is the basis for more interesting stochastic L-systems.
+</p>
+
+
+<h5>Pine</h5>
+<ul>
+	<li>Needle emitters</li>
+</ul>
+
+<h5>Plum</h5>
+<ul>
+	<li>Highly stochastic trees</li>
+</ul>
+
+<h5>Palm</h5>
+
+
+<h5>Willow</h5>
+<ul>
+	<li>Add an L-system rule to produce "strings".</li>
+</ul>
+
+
+<h5>Cutting Interaction</h5>
+<p>
+Now that we the physics simulation is properly driven by our "active" L-system,
+we can start adding interactivity to our plants.
+
+DUAL GRAPH AND DELETION ISSUES
+</p>
+
+
+<h5>Rain Interaction</h5>
+<p>
+Drip drop...
+</p>
+
+
+<h5>Wind Interaction</h5>
+<p>
+Global drag, Vector wind, and Fluid wind.
+</p>
+
+
+<h5>Fire Interaction</h5>
+<p>
+???
+</p>
+
+<h5>Ice Interaction</h5>
+<p>
+???
+</p>
+
+<h5>Future Work</h5>
+<p>
+The most obvious extension to this project is three-dimensional trees.
+Everything is harder in 3D.
+	<ul> Some potential problems:
+		<li>Branch tangling (ignored in 2D)</li>
+		<li>3D turtle control (the 'T' instruction gets stranger)</li>
+		<li>Rendering issues</li>
+	</ul>
+</p>
+
+
+<h5>Citations</h5>
+<ul class="citations">
+	<li>
+	[1] T. Jakobsen, "Advanced Character Physics," in Game Developers Conf. Proc., San Jose, 2011.
+	</li>
+	<li>
+	[2] P. Prusinkiewicz and A. Lindenmayer, "Graphical modeling using L-systems," in <em>The Algorithmic Beauty of Plants</em>, New York, NY: Springer-Verlag, 1996.
+	</li>
+	<li>
+	[3] B. Manavi, "Real-time tree simulation using Verlet integration", M.S. thesis, Univ. Central Florida, Orlando, 2007.
+	</li>
+</ul>
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("cs373-sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+
+<h3>CS 373: Week 6</h3>
+<h4>9 October 2011</h4>
+
+<p>
+A rather hectic week, stuffed full of interviews.
+</p>
+
+<h5>Monday</h5>
+<p>
+My partner and I worked on Project 3 a little.
+We threw around some ideas for an improved cache,
+but didn't get much done.
+</p>
+
+<h5>Tuesday</h5>
+<p>
+We started writing a program to build a "cluster cache".
+Our "cluster cache" would partition all the customers into several disjoint clusters,
+and would also compute the average ratings for all movies of each cluster.
+Disjoint groups with distant ratings are produced by randomly seeding several clusters,
+and then averaging each new customer into the cluster with the lowest RMSE against that customer.
+We implemented the program in Java; however, it read files very slowly,
+and I never saw it terminate afterwards.
+That night, I went home and re-implemented the cluster cache program in C++.
+This program ran much faster:
+It chewed through files
+<a href="http://www.youtube.com/watch?v=OHxyZaZlaOs">
+FASTER LIKE THE SPEED OF SOUND</a>.
+The clustering appeared to be a success,
+with a RMSE of over 2.3 for the two most distant clusters.
+</p>
+
+<h5>Wednesday</h5>
+<p>
+We hooked up the cluster cache to our main program.
+The result was a RMSE score of 0.9432, lower than the "goal" rating of 0.9474.
+However, this cache would be difficult to use against the real qualifying data,
+since it looks up customers by ID.
+On a real data set, a new customer would have to be matched to a cluster.
+This would slow down the program considerably;
+all the customer's ratings would have to be gathered and stored
+for the RMSE computation against clusters
+(since the ratings are stored in a per-movie format).
+</p>
+
+<p>
+Wednesday night, I attended the Apple-Turing dinner.
+Ironically, towards the end of the event,
+I received a text message informing me that Steve Jobs died. R.I.P. Steve.
+</p>
+
+<h5>Thursday</h5>
+<p>
+Two interviews with Apple in the morning.
+In the afternoon, my partner finished up some unit tests and submitted Project 3.
+I was unable to help, as I was on a plane to California for an interview with
+<a href="http://pocketgems.com">Pocket Gems</a>,
+a mobile game company with an impressive
+<a href="http://pocketgems.com/about/fast-facts">pile of achievements</a>.
+</p>
+
+<h5>Friday</h5>
+<p>
+The on-site interview with Pocket Gems was a lot longer than expected:
+I spoke with two hiring managers and four engineers.
+It was a long interview session,
+and while I managed to solve the coding problems,
+I felt I answered very slowly.
+</p>
+
+<p>
+Even with a large list of things on my TODO-list
+(mostly from all the hours spent traveling to and from California),
+I'm still looking forward to working on the next projects in this class
+with a large group of five teammates.
+</p>
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+	<h3>2D Fluid</h3>
+	<h4>May 2010</h4>
+	<p>
+	Based on
+	<a href="http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf">this paper</a>
+	by
+	<a href="http://www.dgp.toronto.edu/people/stam/" target="_new">Jos Stam</a>.
+	</p>
+	
+	<p>
+	<img src="img/fluid/stam_fluid1.png" alt="Stam Fluid 1">
+	<br>
+	Fluid at slow speeds
+	</p>
+	
+	<p>
+	<img src="img/fluid/stam_fluid2.png" alt="Stam Fluid 2">
+	<br>
+	Fluid still stable at high speeds
+	</p>
+	
+	<p>
+	Originally I was hoping to use it as real-time eye candy.
+	But, the fluid eats too much CPU.
+	<ul>Now, I'm considering other tecnhiques:
+		<li>Pre-rendering (<a href="img/fluid/ys_prerenderfire.png" target="_new">example</a>) for eye candy</li>
+		<li>Coarse real-time fluid for interactions (more on this later)</li>
+	</ul>
+	</p>
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

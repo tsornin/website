@@ -1,0 +1,178 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+
+<?php include("file_links.php"); ?> <!--Pretty-print-->
+
+<div id="content">
+<div id="content_sub">
+	<h3>"Umbrella" 2D Physics Engine</h3>
+	<h4>November 2009 - current</h4>
+	<p>
+	A toy physics engine to practice coding and software interface design.
+	Written in
+	<a href="http://en.wikipedia.org/wiki/C%2B%2B" target="_new">C++</a>
+	with
+	<a href="http://www.opengl.org/" target="_new">OpenGL</a>
+	and
+	<a href="http://www.libsdl.org/" target="_new">SDL</a>.
+	Makes heavy use of the
+	<a href="http://en.wikipedia.org/wiki/Standard_Template_Library" target="_new">STL</a>.
+	</p>
+	
+	<h5>Demo 1. Rigid Collision Test: "Pong"</h5>
+	<p>
+	[ <?php echo filelinkandsize( "demos/ys_pong.zip" ); ?> ]
+	<br>
+	<img src="img/umbrella/pong.png" alt="Pong Screenshot">
+	</p>
+	<p>
+	This classic arcade game is a useful test case for a physics engine.
+	This version of Pong has a twist: the square ball spins and the paddles rotate!
+	</p>
+	<ul>Controls:
+		<li>Arrow Keys - move paddle</li>
+		<li>Z - linear enable</li>
+		<li>X - angular enable</li>
+		<li>C - rotate counter-clockwise</li>
+		<li>V - rotate clockwise</li>
+	</ul>
+	
+	
+	<h5>Demo 2. Euler Collision Test: "Emitters"</h5>
+	<p>
+	[ <?php echo filelinkandsize( "demos/ys_particle.zip" ); ?> ]
+	<br>
+	<img src="img/umbrella/particles.png" alt="Emitters Screenshot">
+	</p>
+	<p>
+	This demo shows off some particle emitters:
+	a "burst" style emitter, two colored flames, a rain emitter,
+	and finally, a rain-of-fire emitter.
+	All particles collide with the map
+	(modeled after a
+	<a href="http://ian-albert.com/games/super_mario_bros_maps/mario-bonusarea-j.gif">
+	SMB1 warp zone</a>).
+	</p>
+	<p>
+	Emitters may use other emitters as their particle type.
+	Out of the five emitters, only the armageddon emitter does this:
+	the top-level emitter has settings similar to the rain emitter,
+	but the particles created are fire emitters themselves.
+	</p>
+	<p>
+	Rendering is currently inefficient (OpenGL immediate mode),
+	and spawning too many particles will slow down the entire game.
+	</p>
+	<ul>Controls:
+		<li>Arrow Keys - move emitter</li>
+		<li>Z - emitter toggle</li>
+		<li>X - emitter on</li>
+		<li>C - next emitter</li>
+		<li>V - previous emitter</li>
+		<li>J - zoom out</li>
+		<li>K - zoom in</li>
+	</ul>
+	
+	
+	<h5>Demo 3. Soft-body Test: "Bamboo"</h5>
+	<p>
+	[ <?php echo filelinkandsize( "demos/ys_tree.zip" ); ?> ]
+	<!--
+	<br>
+	<img src="img/umbrella/bamboo.png" alt="Bamboo Screenshot">
+	-->
+	</p>
+	<p>
+	This demo shows off some soft-body plants.
+	</p>
+	
+	<!--
+	<h5>About the engine</h5>
+	<ul>Umbrella is designed around three object types.
+		<li>Rigid - rigid bodies composed of convex shapes.</li>
+		<li>Euler - dedicated particle type for inaccurate fast particles.</li>
+		<li>Verlet - dedicated particle type for stable soft bodies.</li>
+	</ul>
+	
+	<p>
+	Particles do not collide with other particles, only other rigid bodies.
+	So, there are three types of collisions, which are each handled differently:
+	</p>
+	
+	<p>
+	<table>
+		<thead>
+			<tr>
+				<th>Convex vs...</th>
+				<th>Convex</th>
+				<th>Euler</th>
+				<th>Verlet</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Broad-phase:</td>
+				<td>Sort-and-sweep</td>
+				<td>Quadtree</td>
+				<td>Quadtree</td>
+			</tr>
+			<tr>
+				<td>Narrow-phase:</td>
+				<td>Separating axis</td>
+				<td>Point-in-polygon</td>
+				<td>Point-in-polygon</td>
+			</tr>
+			<tr>
+				<td>Resolution:</td>
+				<td>Impulse</td>
+				<td>Impulse</td>
+				<td>Positional</td>
+			</tr>
+		</tbody>
+	</table>
+	</p>
+	
+	<p>
+	Particles (Euler/Verlet) are inserted into point quadtrees to accelerate collision detection.
+	Quadtrees with rectangular data are difficult to work with,
+	so sort-and-sweep is used for convex-convex collision detection.
+	</p>
+	
+	<ul>Features:
+		<li>Impulse-based collision response</li>
+		<li>Rigid bodies with multiple convex shapes</li>
+		<li>Dedicated particle types</li>
+		<li>User-specified collision groups</li>
+		<li>OpenGL rendering of physics objects and collisions</li>
+	</ul>
+	
+	<p>
+	The most notable missing feature is a collision solver.
+	Currently there is only pairwise resolution of collisions,
+	meaning no stable stacking.
+	</p>
+	-->
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+﻿<html>
+<?php include("head.php"); ?>
+<body>
+
+<div id="container_all">
+<?php include("header.php"); ?>
+	
+	<div id="container_content">
+<?php include("cs373-sidebar.php"); ?>
+		
+		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
+<div id="content">
+<div id="content_sub">
+
+<h3>CS 373: Week 12</h3>
+<h4>20 November 2011</h4>
+
+<p>
+This week in class we covered reflection and singletons.
+No more projects!
+The only major things left for this class are the project presentation and the third exam.
+</p>
+
+<p>
+This weekend I installed Stephan T. Lavavej's
+<a href="http://nuwen.net/mingw.html">MinGW Distro</a>.
+The newest version includes, among other things,
+<a href="http://gcc.gnu.org/gcc-4.6/cxx0x_status.html">GCC 4.6</a>.
+The feature with the most immediate benefits (for me, at least)
+is the "range-based for loop", which has long been missing from C++.
+Instead of this ugly thing...
+</p>
+
+<p>
+<code>
+int sum ( const std::vector < int >& xs ) {
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; int result = 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; for ( std::vector < int >::const_iterator
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; i = xs.begin(); i != xs.end(); ++i ) {
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; int x = *i;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; result += x;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; return result;
+<br>
+}
+</code>
+</p>
+
+<p>
+...we now have a much more Java- or Python-like syntax.
+</p>
+
+<p>
+<code>
+int sum ( const std::vector < int >& xs ) {
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; int result = 0;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; for ( const int& x : xs ) {
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; result += x;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; return result;
+<br>
+}
+</code>
+</p>
+
+<p>
+Awesome.
+</p>
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+		<!-- END STUFF TO EDIT PER-PAGE -->
+		
+		<div id="container_content_clear">
+		</div>
+		
+	</div> <!--end container_content-->
+	
+<?php include("footer.php"); ?>
+	
+</div> <!--end container_all-->
+
+</body>
+</html>

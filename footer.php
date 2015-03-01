@@ -1,11 +1,8 @@
 <?php
-/**
- * Returns true if Internet Explorer.
- * See: http://www.anyexample.com/programming/php/how_to_detect_internet_explorer_with_php.xml
- */
+date_default_timezone_set('America/Los_Angeles');
+// Returns true if user-agent is IE 10 or older.
 function detectIE() {
-	if ( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) &&
-	( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MSIE' ) !== false ) )
+	if ( isset( $_SERVER[ 'HTTP_USER_AGENT' ] ) && ( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MSIE' ) !== false ) )
 		return true;
 	else
 		return false;
@@ -15,13 +12,8 @@ function detectIE() {
 	<div id="footer">
 	<div id="footer_sub">
 		<h4>
-		<!--
-		Content &copy; <?php echo date("Y") ?> Bruno Li.
-		-->
-		
-		Website under construction.
-		
-		<!-- Suggestion to avoid IE -->
+		&copy; <?php echo date("Y") ?> Bruno Li.
+		<!--Website under construction.-->
 		<?php if ( detectIE() ) { ?>
 			Get
 			<a href="http://www.mozilla.com/">Firefox</a>

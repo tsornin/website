@@ -1,21 +1,11 @@
-﻿<html>
-<?php include("head.php"); ?>
-<body>
+﻿<?php include("precontent.php"); ?>
 
-<div id="container_all">
-<?php include("header.php"); ?>
-	
-	<div id="container_content">
-<?php include("sidebar.php"); ?>
-		
-		<!-- BEGIN STUFF TO EDIT PER-PAGE -->
-
-<?php include("file_links.php"); ?> <!--Pretty-print-->
-
-<div id="content">
-<div id="content_sub">
 	<h3>"Umbrella" 2D Physics Engine</h3>
 	<h4>November 2009 - current</h4>
+	<p>
+	As part of my thesis I wrote a god damn physics engine.
+	I hand-rolled collision detection and response, then realized it was just converging towards box2d, and promptly ceased development. However, I've got three cool demos for you: Pong, Emitters, Bamboo, and Box Stacking (the last to be developed).
+	</p>
 	<p>
 	A toy physics engine to practice coding and software interface design.
 	Written in
@@ -161,18 +151,5 @@
 	meaning no stable stacking.
 	</p>
 	-->
-</div> <!--end content_sub-->
-</div> <!--end content-->
-		<!-- END STUFF TO EDIT PER-PAGE -->
-		
-		<div id="container_content_clear">
-		</div>
-		
-	</div> <!--end container_content-->
-	
-<?php include("footer.php"); ?>
-	
-</div> <!--end container_all-->
 
-</body>
-</html>
+<?php include("postcontent.php"); ?>

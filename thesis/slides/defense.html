@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Thesis Defense</title>
+	
+	<meta name="description" content="Thesis Defense">
+	<meta name="author" content="Bruno Li">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="../deck.js/core/deck.core.css">
+	<link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="../deck.js/extensions/scale/deck.scale.css">
+	
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="../deck.js/themes/style/swiss.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="../deck.js/themes/transition/fade.css">
+	
+	<script src="../deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="slide" id="intro-title">
+	<h1>Physically Based Animation of Plants</h1>
+	<h2>Undergraduate Honors Thesis</h2>
+	<h3>Bruno Li</h3>
+	<h3>Advisor: Donald Fussell</h3>
+</section>
+
+<section class="slide" id="intro-goals">
+	<h2>Goals</h2>
+	<p>A fully interactive tree simulation.</p>
+	<ul>
+		<li>
+			<strong>Rendering</strong>:
+			Trees that...look like trees
+		</li>
+		<li>
+			<strong>Geometry</strong>:
+			A wide variety of tree shapes
+		</li>
+		<li>
+			<strong>Dynamics</strong>:
+			Interactive motion (arbitrary physics, not pre-canned animation)
+		</li>
+		<li>
+			<strong>Effects</strong>:
+			Easy to add extra effects if needed
+		</li>
+		<li>
+			<strong>Real-time</strong>:
+			Fast simulation (doesn't have to be "accurate")
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="intro-rendering">
+	<h2>Prior Work: Tree Rendering</h2>
+	<img src="img/bonsai.png" alt="">
+	<p>Boudon F., Prusinkewicz P., Federl P., Godin C., Karwowski R., "Interactive design of bonsai tree models". Comput. Graph. Forum 22, 3 (2003), 591--600. 2, 5 </p>
+</section>
+
+<section class="slide" id="intro-habel">
+	<h2>Prior Work: Tree Animation</h2>
+	<iframe src="http://player.vimeo.com/video/4337006" width="800" height="450" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	<p><a href="http://vimeo.com/4337006">Real-Time Rendering and Animation of Trees</a>
+	<p>Habel, "Physically Guided Animation of Trees", Computer Graphics Forum, Vol. 28, No. 2. (2009), pp. 523-532</p>
+</section>
+
+<section class="slide" id="intro-first-class">
+	<h2>First-Class Trees</h2>
+	<p>All sorts of interaction:</p>
+	<ul>
+		<li>
+			<strong>Collision</strong>:
+			Arbitrary collision against other objects (debris, ground)
+		</li>
+		<li>
+			<strong>Applied forces</strong>:
+			Arbitrary applied forces (tugging the tree)
+		</li>
+		<li>
+			<strong>Destructible</strong>:
+			Trees can be cut into pieces
+		</li>
+		<li>
+			<strong>Special effects</strong>:
+			Fire, rain, wind, etc.
+		</li>
+</section>
+
+<section class="slide" id="intro-demo">
+	<h2>First-Class Trees</h2>
+	<img src="img/results1.png" alt="">
+</section>
+
+<section class="slide" id="method-overview">
+	<h2>Method Overview</h2>
+	<p></p>
+	<ul>
+		<li>
+			<h3>Design (geometry)</h3>
+			<p>Use L-systems to generate tree geometry</p>
+		</li>
+		<li>
+			<h3>Physics (structure)</h3>
+			<p>Develop physics to provide tree structure</p>
+		</li>
+		<li>
+			<h3>Effects</h3>
+			<p>Add effects with support from physics engine (collision)</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="lsystem">
+	<h2>L-Systems</h2>
+	<p></p>
+	<ul>
+		<li>
+			<strong>Parallel rewriting</strong>:
+			<p>Each symbol in a string expands into more symbols</p>
+		</li>
+		<li>
+			<strong>Geometric interpretation</strong>:
+			<p>Interpret strings as geometry</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="lsystem-examples">
+	<h2>L-System: Examples</h2>
+	<img src="img/lsystem.png" alt="">
+	<p>P. Prusinkiewicz and A. Lindenmayer, "Graphical modeling using L-systems", in The Algorithmic Beauty of Plants, New York, NY: Springer-Verlag, 1996.</p>
+</section>
+
+<section class="slide" id="lsystem-dtree">
+	<h2>L-System: D-Tree</h2>
+	<img src="img/dtree-sad.png" alt="">
+	<pre><code>start : F 1.0 0.005 0 N zero
+zero : F 0.9 0.33 0 [ T 30.0 N zero ] F 0.9 0.33 0 [ T -30.0 N zero ] T 30.0 N zero</code></pre>
+</section>
+
+<section class="slide" id="lsystem-bamboo">
+	<h2>L-System: Bamboo</h2>
+	<img src="img/bamboo-sad.png" alt="">
+	<pre><code>start : F 1.0 0.005 0 N left
+left : F 0.98 0.5 0 [ T  40 F 0.5 0.1 1 N one_a ] N right
+right : F 0.98 0.5 0 [ T -40 F 0.5 0.1 1 N one_a ] N left
+one_a : N one_b
+one_b : F 0.95 0.5 1 N one_a</code></pre>
+</section>
+
+<section class="slide" id="lsystem-willow">
+	<h2>L-System: Willow</h2>
+	<h3>NOT YET IMPLEMENTED</h3>
+</section>
+
+<section class="slide" id="physics-ragdoll">
+	<h2>Soft-Body Physics</h2>
+	<img src="img/angulars.png" alt="ragdoll">
+	<p>T. Jakobsen, "Advanced Character Physics," in Game Developers Conf. Proc., San Jose, 2011.</p>
+</section>
+
+<section class="slide" id="physics-string">
+	<h2>Physics Structures: String</h2>
+	<img src="img/string.png" alt="string">
+</section>
+
+<section class="slide" id="physics-cloth">
+	<h2>Physics Structures: Cloth</h2>
+	<img src="img/cloth.png" alt="cloth">
+</section>
+
+<section class="slide" id="physics-trees-1">
+	<h2>Physics Structures: Trees</h2>
+	<p>Bamboo: initial attempt</p>
+	<img src="img/bamboo-sad.png" alt="">
+</section>
+
+<section class="slide" id="physics-ac-unknown">
+	<h2>Angular Constraint</h2>
+	<img src="img/ac-unknown.png" alt="">
+</section>
+
+<section class="slide" id="physics-ac-unknown">
+	<h2>Angular Constraint</h2>
+	<img src="img/ac-known.png" alt="">
+</section>
+
+<section class="slide" id="physics-rigidbar">
+	<h2>Physics Structures: Rigid Bar</h2>
+	<img src="img/rigidbar.png" alt="">
+</section>
+
+<section class="slide" id="physics-trees-2-before">
+	<h2>Physics Structures: Trees</h2>
+	<p>Bamboo: initial attempt</p>
+	<img src="img/bamboo-sad.png" alt="">
+</section>
+
+<section class="slide" id="physics-trees-2">
+	<h2>Physics Structures: Trees</h2>
+	<p>Bamboo: with angular constraints</p>
+	<img src="img/bamboo.png" alt="">
+</section>
+
+<section class="slide" id="physics-deletion-1">
+	<h2>Deletion 1</h2>
+	<strong>destroy-distance ( DC )</strong>
+	<ol>
+		<li>remove DC from each edge list of its two endpoints</li>
+		<li>delete DC from memory</li>
+	</ol>
+	<strong>destroy-particle ( VL )</strong>
+	<ol>
+		<li>call <strong>destroy-distance</strong> on all distance constraints in the edge list of VL</li>
+		<li>delete VL from memory</li>
+	</ol>
+</section>
+
+<section class="slide" id="physics-deletion-2">
+	<h2>Deletion 2</h2>
+	<strong>destroy-angular ( AC )</strong>
+	<ol>
+		<li>call <strong>destroy-distance</strong> on all eight "implementation" distance constraints</li>
+		<li>call <strong>destroy-particle</strong> on all two "implementation" particles</li>
+		<li>remove AC from each edge list of its two endpoints</li>
+		<li>delete AC from memory</li>
+	</ol>
+	<strong>destroy-distance ( DC )</strong>
+	<ol>
+		<li>call <strong>destroy-angular</strong> on all angular constraints in the edge list of DC</li>
+		<li>remove DC from each edge list of its two endpoints</li>
+		<li>delete DC from memory</li>
+	</ol>
+	<strong>destroy-particle ( VL )</strong>
+	<ol>
+		<li>call <strong>destroy-distance</strong> on all distance constraints in the edge list of VL</li>
+		<li>delete VL from memory</li>
+	</ol>
+</section>
+
+<section class="slide" id="physics-split-diagram-1">
+	<h2>Tree Splitting</h2>
+	<img src="img/split1.png" alt="">
+</section>
+
+<section class="slide" id="physics-split-diagram-2">
+	<h2>Tree Splitting</h2>
+	<img src="img/split2.png" alt="">
+</section>
+
+<section class="slide" id="physics-split-diagram-3">
+	<h2>Tree Splitting</h2>
+	<img src="img/split3.png" alt="">
+</section>
+
+<section class="slide" id="physics-split">
+	<h2>Tree Splitting</h2>
+	<strong>tree-split ( DC )</strong>
+	<ol>
+		<li>A is the tail of the distance constraint arc DC</li>
+		<li>B is the head of the distance constraint arc DC</li>
+		<li>call <strong>destroy-distance</strong> on DC</li>
+		<li>call <strong>bfs</strong> on B</li>
+		<li>new_tree->particles := result of <strong>bfs</strong></li>
+		<li>old_tree->particles := old_tree->particles (set difference) new_tree->particles</li>
+	</ol>
+</section>
+
+<section class="slide" id="vfx">
+	<h2>Special Effects</h2>
+	<img src="img/vfx.png" alt="vfx">
+</section>
+
+<section class="slide" id="vfx-fire">
+	<h2>Fire</h2>
+	<p>Criteria for fire behavior:</p>
+	<ul>
+		<li>
+			<strong>Flammable</strong>:
+			Objects can catch on fire
+		</li>
+		<li>
+			<strong>Local Spreading</strong>:
+			Fire spreads across an entire tree
+		</li>
+		<li>
+			<strong>Global Spreading</strong>:
+			Fire spreads from tree to tree
+		</li>
+		<li>
+			<strong>Upward Spreading</strong>:
+			Fire tends to spread upward
+		</li>
+		<li>
+			<strong>Wind Spreading</strong>:
+			Fire can be affected by wind
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="vfx-rain">
+	<h2>Rain</h2>
+	<p>Criteria for rain behavior:</p>
+	<ul>
+		<li>
+			<strong>Fire-fighting</strong>:
+			Flammable objects get wet and extinguish
+		</li>
+		<li>
+			<strong>Tree shaking</strong>:
+			Tree branches wiggle in response to raindrops
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="vfx-wind">
+	<h2>Wind</h2>
+	<h3>NOT YET IMPLEMENTED</h3>
+</section>
+
+<section class="slide" id="end-results">
+	<h2>Conclusion: Results</h2>
+	<img src="img/results2.png" alt="">
+</section>
+
+<section class="slide" id="end-future">
+	<h2>Conclusion: Future Work</h2>
+	<p>Everything is harder in 3D:</p>
+	<ul>
+		<li>
+			<strong>Self-collision</strong>
+		</li>
+		<li>
+			<strong>Twisting</strong>
+		</li>
+		<li>
+			<strong>L-system turtle</strong>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="end">
+	<h2>The End</h2>
+	<h1>Questions?</h1>
+</section>
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="../deck.js/jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck.js/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>

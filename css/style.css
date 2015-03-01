@@ -300,12 +300,12 @@ div #container_content {
 
 	div #content {
 		float: left;
-		width: 704px; /* 896 - 192 */
+		width: 736px; /* 896 - 160 */
 		/*background-color: #bbb;*/
 	} div #content_sub {
 		margin-top: 16px;
 		margin-bottom: 32px;
-		margin-left: 32px;
+		margin-left: 24px;
 		margin-right: 16px;
 		/*background-color: #ccc;*/
 	}

@@ -344,6 +344,10 @@ div #container_content {
 			background: transparent url('img/sidebar-li_bullet.png') no-repeat right top;
 		}
 
+		div #sidebar a {
+			display: block;
+		}
+
 		div #sidebar_first {}
 		div #sidebar_second {}
 		div #sidebar_third {}

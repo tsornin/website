@@ -97,36 +97,6 @@ code {
 
 /** Sidebar **/
 
-/* Position flag text on flag image */
-div #sidebar h2 {
-	text-indent: 56px;
-	background: transparent url('img/sidebar-h2.png') no-repeat right top;
-}
-
-/* Different flag images */
-div #coding h2
-	{ background: transparent url('img/sidebar-h2-coding.png') no-repeat right top; }
-div #artwork h2
-	{ background: transparent url('img/sidebar-h2-artwork.png') no-repeat right top; }
-div #info h2
-	{ background: transparent url('img/sidebar-h2-info.png') no-repeat right top; }
-div #fourth h2
-	{ background: transparent url('img/sidebar-h2-fourth.png') no-repeat right top; }
-
-/* Bar behind <li> elements */
-div #sidebar ul {
-	background: transparent url('img/sidebar-li_plain.png') repeat-y right top;
-	padding-bottom: 16px;
-}
-/* Position <li> in front of bar, no bullets */
-div #sidebar ul li {
-	font-size: 14px;
-	line-height: 32px;
-	list-style-type: none;
-	text-indent: 48px;
-	background: transparent url('img/sidebar-li_bullet.png') no-repeat right top;
-}
-
 /* Sidebar links don't show link or visited colors */
 div #sidebar a:link,
 div #sidebar a:visited,
@@ -276,7 +246,8 @@ div {
 }
 
 body {
-	padding: 16px;
+	margin: 8px;
+	padding: 0px;
 	background-color: white;
 }
 
@@ -294,7 +265,7 @@ div #header {
 	width: 896px;
 	/*border-bottom: 3px solid #000;*/ /* This is ugly */
 	border-bottom: 1px solid #7f7f7f;
-	background: transparent url('img/header-bg.png') left top;
+	background: transparent url('img/header-bg_portrait.png') left top;
 	/*background-color: 777;*/
 } div #header_sub {
 	margin-top: 8px; /* Because aligning to bottom is too hard */
@@ -312,39 +283,72 @@ div #container_content {
 	/*background-color: #999;*/
 }
 
-		/*
-		We are using Faux Columns for #sidebar and #content (with sidebar-bg.png),
-		so there's no border-right in #sidebar or border-left in #content.
-		*/
+	/*
+	We are using Faux Columns for #sidebar and #content (with sidebar-bg.png),
+	so there's no border-right in #sidebar or border-left in #content.
+	*/
 
-		div #sidebar {
-			padding-top: 16px;
-			padding-bottom: 0px;
-			padding-left: 0px;
-			padding-right: 0px;
-			float: left;
-			width: 192px;
-			/*background-color: #aaa;*/
+	div #sidebar {
+		padding-top: 16px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		float: left;
+		width: 160px;
+		/*background-color: #aaa;*/
+	}
+
+	div #content {
+		float: left;
+		width: 704px; /* 896 - 192 */
+		/*background-color: #bbb;*/
+	} div #content_sub {
+		margin-top: 16px;
+		margin-bottom: 32px;
+		margin-left: 32px;
+		margin-right: 16px;
+		/*background-color: #ccc;*/
+	}
+
+	div #container_content_clear {
+		clear: both;
+		display: block;
+		height: 1px;
+		margin: -1px 0 0 0 0;
+		/*background-color: #ddd;*/
+	}
+
+		/** Sidebar rows **/
+
+		/* Position flag text on flag image */
+		div #sidebar h2 {
+			text-indent: 56px;
+			background: transparent url('img/sidebar-h2.png') no-repeat right top;
+		}
+		div #sidebar h2 img {
+			position: absolute; /* Gross, but ignoring text-indent is hard */
+			left: 24px;
 		}
 
-		div #content {
-			float: left;
-			width: 704px; /* 896 - 192 */
-			/*background-color: #bbb;*/
-		} div #content_sub {
-			margin-top: 16px;
-			margin-bottom: 32px;
-			margin-left: 32px;
-			margin-right: 16px;
-			/*background-color: #ccc;*/
+		/* Bar behind <li> elements */
+		div #sidebar ul {
+			background: transparent url('img/sidebar-li_plain.png') repeat-y right top;
+			padding-bottom: 16px;
 		}
-		
-		div #container_content_clear {
-			clear: both;
-			display: block;
-			height: 1px;
-			margin: -1px 0 0 0 0;
-			/*background-color: #ddd;*/
+		/* Position <li> in front of bar, no bullets */
+		div #sidebar ul li {
+			font-size: 14px;
+			line-height: 32px;
+			list-style-type: none;
+			text-indent: 48px;
+			background: transparent url('img/sidebar-li_bullet.png') no-repeat right top;
+		}
+
+		div #sidebar_first {}
+		div #sidebar_second {}
+		div #sidebar_third {}
+		div #sidebar_fourth h2 {
+			background: transparent url('img/sidebar-h2_bottom.png') no-repeat right top;
 		}
 
 div #footer {
@@ -352,10 +356,10 @@ div #footer {
 	height: 64px;
 	width: 896px;
 	border-top: 1px solid #7f7f7f;
-	background: transparent url('img/footer-bg.png') left top;
+	/*background: transparent url('img/footer-bg_beach.png') left top;*/
 	/*background-color: #eee;*/
 } div #footer_sub {
-	margin-top: 8px;
+	margin-top: 0px;
 	margin-bottom: 0px;
 	margin-left: 16px;
 	margin-right: 0px;

@@ -10,15 +10,15 @@ function rooturl( $path ) {
 				<ul>
 					<li><a href="<?=rooturl( "thesis.html" ); ?>">Honors Thesis</a></li>
 					<li><a href="<?=rooturl( "umbrella.html" ); ?>">Physics Engine</a></li>
-					<li><a href="<?=rooturl( "fluid.html" ); ?>">2D Fluid</a></li>
+					<!-- <li><a href="<?=rooturl( "fluid.html" ); ?>">2D Fluid</a></li> -->
 				</ul>
 			</div>
 
 			<div id="sidebar_second">
 				<h2><img src="<?=rooturl( "img/flagicon-art.png" ); ?>">artwork</h2>
 				<ul>
-					<li><a href="<?=rooturl( "art2d.html" ); ?>">2D Vector</a></li>
-					<li><a href="<?=rooturl( "art3d.html" ); ?>">3D Modeling</a></li>
+					<li><a href="<?=rooturl( "art2d.html" ); ?>">2D</a></li>
+					<li><a href="<?=rooturl( "art3d.html" ); ?>">3D</a></li>
 				</ul>
 			</div>
 

@@ -1,34 +1,33 @@
 ﻿<?php include("precontent.php"); ?>
 
-<h3>Honors Thesis</h3>
+<h3>Undergraduate Honors Thesis</h3>
 <h4>May 2012</h4>
 
 <p>
-Honors students at UT Austin complete a thesis (CS 379H) or become covered in shame and graduate as non-honors poseurs. The thesis is a bit smaller in scope than, say, a master's thesis. I did mine under advisor <a href="http://www.cs.utexas.edu/~fussell/">Fussell</a> and second reader <a href="http://www.cs.utexas.edu/~lin/">Lin</a>. My thesis was about simulating trees in real time. It involved a lot of game loop, physics, and graphics nonsense.
+Honors students in UT CS complete a thesis as part of their undergraduate career. My thesis, <em>Physically Based Modeling of Interactive Plants</em>, was done under professors <a href="http://www.cs.utexas.edu/~fussell/">Donald Fussell</a> and (second reader) <a href="http://www.cs.utexas.edu/~lin/">Calvin Lin</a>. The goal was to produce a fully interactive simulation of a soft-body tree or plant which appeared realistic in its animation (the time domain), as opposed to looking convincing in a screenshot.
 </p>
 
 <p>
-In retrospect, as a research work I spent little time examining prior work and too much time hand-rolling my own physics. No regrets though, was great for learning how to fucking code.
+In retrospect, as a research work I spent too little time examining prior work and too much time hand-rolling my own physics. The results were not quantitatively measured, although everyone at the defense agreed that the animation was convincing. Despite these flaws, this thesis was selected for the runner-up best-undergraduate-thesis-award in 2012.
 </p>
 
-<h5>Paper</h5>
 <p>
-Find it in <a href="https://www.cs.utexas.edu/undergraduate-program/undergraduate-research/honors-thesis">this page of reports</a>, precisely <a href="http://apps.cs.utexas.edu/tech_reports/reports/tr/TR-2083.pdf">PDF link here</a>, or locally: [ <?php echo filelinkandsize( "thesis/TR-2083.pdf" ); ?> ]
+Find it <a href="http://apps.cs.utexas.edu/tech_reports/reports/tr/TR-2083.pdf">here</a> in <a href="https://www.cs.utexas.edu/undergraduate-program/undergraduate-research/honors-thesis">this page of reports</a>, or locally: [ <?php echo filelinkandsize( "thesis/TR-2083.pdf" ); ?> ].
 </p>
 
-<h5>Presentation slides</h5>
+<!-- TODO: controls -->
+<h5>Demo</h5>
 <p>
-	<a href="thesis/slides/defense.html">Here</a>, uses deck.js.
-</p>
-
-<h5>Demo program</h5>
-<p>
-TODO: actual link.
-Not particularly user-friendly. TODO: controls
+Comes with <a href="thesis/slides/defense.html">defense presentation slides</a> (using <a href="http://imakewebthings.com/deck.js/" target="_new">deck.js</a>).
 <br>
-[ <?php echo filelinkandsize( "demos/ys_pong.zip" ); ?> ]
+[ <?php echo filelinkandsize( "thesis/demo.zip" ); ?> ]
 <br>
-<img src="img/thesis.png" alt="Thesis Demo Screenshot">
+<img src="img/thesis/thesis.png" alt="Thesis Demo Screenshot">
+</p>
+
+<h5>Extensions</h5>
+<p>
+As a proof of concept, this was later extended by <a href="https://www.linkedin.com/pub/katheryn-shi/">Katheryn Shi</a> onto iOS with Core Motion support, producing an app featuring a plant that wiggled in response to shaking of the device.
 </p>
 
 <?php include("postcontent.php"); ?>

@@ -181,6 +181,19 @@ div #content a:active {
 	text-decoration: underline;
 }
 
+/* External links */
+/*
+	Two notes:
+	1. Sidebar links also start with "http" so don't grab those by accident.
+	2. If you somehow end up needing to fully link yourself, you can turn off this rule with another rule:
+		a[href^="http://www.mydomain.com"] { background: none; padding-right: 0; }
+*/
+div #content a[href^="http"] {
+	background: url('img/external_arrow.png') center right no-repeat;
+	padding-right: 12px;
+}
+
+/* Image link hover effect */
 div #content img {
 	-webkit-transition:opacity 0.2s ease-out;
 	-moz-transition:opacity 0.2s ease-out;

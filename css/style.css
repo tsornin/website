@@ -126,6 +126,13 @@ div #header h1 a:active {
 	color: #55c9c9;
 	text-decoration: none;
 }
+/* Big H1 link fades */
+div #header h1 a {
+	-webkit-transition:color 0.2s linear;
+	-moz-transition:color 0.2s linear;
+	-o-transition:color 0.2s linear;
+	transition:color 0.2s linear;
+}
 
 /* Bigger text in header */
 div #header p {
@@ -165,6 +172,16 @@ div #content a:hover,
 div #content a:active {
 	color: #55c9c9;
 	text-decoration: underline;
+}
+
+div #content img {
+	-webkit-transition:opacity 0.2s ease-out;
+	-moz-transition:opacity 0.2s ease-out;
+	-o-transition:opacity 0.2s ease-out;
+	transition:opacity 0.2s ease-out;
+}
+div #content a img:hover {
+	opacity: 0.6;
 }
 
 /* Paragraph spacing */

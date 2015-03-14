@@ -110,6 +110,13 @@ div #sidebar a:active {
 	color: #55c9c9;
 	text-decoration: none;
 }
+/* Sidebar links fade */
+div #sidebar a {
+	-webkit-transition:color 0.2s linear;
+	-moz-transition:color 0.2s linear;
+	-o-transition:color 0.2s linear;
+	transition:color 0.2s linear;
+}
 
 /** Header **/
 

@@ -59,12 +59,12 @@ h5 { font-size: 18px; } /* Content sub-headers */
 /* Mini-text */
 h4 { /* TODO: this shouldn't really be a header */
 	font-size: 12px;
-	color: #7f7f7f;
+	color: gray;
 }
 
 /* Sub-header separater */
 h5 {
-	border-top: 1px solid #7f7f7f;
+	border-top: 1px solid gray;
 }
 
 /** Serif body **/
@@ -238,10 +238,10 @@ div #content dl dd {
 /* Tables */
 div #content th {
 	text-align: left;
-	color: #7f7f7f;
+	color: gray;
 	font-weight: normal;
 	font-style: normal;
-	border-bottom: 1px solid #7f7f7f;
+	border-bottom: 1px solid gray;
 }
 
 div #content blockquote {
@@ -287,7 +287,7 @@ div #header {
 	height: 80px;
 	width: 896px;
 	/*border-bottom: 3px solid #000;*/ /* This is ugly */
-	border-bottom: 1px solid #7f7f7f;
+	border-bottom: 1px solid gray;
 	/*background: transparent url('img/header-bg_portrait.png') left top;*/
 } div #header_sub {
 	margin-top: 8px; /* Because aligning to bottom is too hard */
@@ -375,7 +375,7 @@ div #footer {
 	clear: both;
 	height: 64px;
 	width: 896px;
-	border-top: 1px solid #7f7f7f;
+	border-top: 1px solid gray;
 	/*background: transparent url('img/footer-bg_portrait.png') left top;*/
 } div #footer_sub {
 	margin-top: 0px;
@@ -404,7 +404,7 @@ div #content img {
 	margin-left: 0px;
 	margin-right: 13px;
 	padding: 2px;
-	border: 1px solid #7f7f7f;
+	border: 1px solid gray;
 }
 
 div #portrait img {

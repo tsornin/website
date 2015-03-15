@@ -4,7 +4,7 @@
 	<h4>November 2009 - February 2013</h4>
 	<p>
 	As part of my thesis I wrote a god damn physics engine.
-	I hand-rolled collision detection and response, then realized it was just converging towards box2d, and promptly ceased development. However, I've got three cool demos for you: Pong, Emitters, Bamboo, and Box Stacking (the last to be developed).
+	I hand-rolled collision detection and response, then realized it was just converging towards box2d, and promptly ceased development. Before that, it produced a few interesting demos in its own right, so I've got three cool things for you: Pong, Emitters, and Box Stacking (the last to be developed).
 	</p>
 	<p>
 	A toy physics engine to practice coding and software interface design.
@@ -28,13 +28,21 @@
 	This classic arcade game is a useful test case for a physics engine.
 	This version of Pong has a twist: the square ball spins and the paddles rotate!
 	</p>
-	<ul>Controls:
-		<li>Arrow Keys - move paddle</li>
-		<li>Z - linear enable</li>
-		<li>X - angular enable</li>
-		<li>C - rotate counter-clockwise</li>
-		<li>V - rotate clockwise</li>
+	<div class="slide_header">
+		<span class="slide_icon">[+]</span>
+		<span class="slide_title">Controls:</span>
+	</div>
+	<div class="slide_content">
+	<div class="slide_content_sub">
+	<ul>
+		<li><code>&uarr;</code> <code>&darr;</code> - move paddle</li>
+		<li><code>C</code> <code>V</code> - rotate paddle</li>
+		<li><code>Z</code> - freeze paddle movement</li>
+		<li><code>X</code> - freeze paddle rotation</li>
 	</ul>
+	</div>
+	</div>
+	</br>
 	
 	
 	<h5>Demo 2. Euler Collision Test: "Emitters"</h5>
@@ -62,16 +70,28 @@
 	Rendering is currently inefficient (OpenGL immediate mode),
 	and spawning too many particles will slow down the entire game.
 	</p>
-	<ul>Controls:
-		<li>Arrow Keys - move emitter</li>
-		<li>Z - emitter toggle</li>
-		<li>X - emitter on</li>
-		<li>C - next emitter</li>
-		<li>V - previous emitter</li>
-		<li>J - zoom out</li>
-		<li>K - zoom in</li>
+	<div class="slide_header">
+		<span class="slide_icon">[+]</span>
+		<span class="slide_title">Controls (click to expand):</span>
+	</div>
+	<div class="slide_content">
+	<div class="slide_content_sub">
+	<ul>
+		<li>
+			<code>&larr;</code>
+			<code>&uarr;</code>
+			<code>&rarr;</code>
+			<code>&darr;</code> - move emitter</li>
+		<li><code>Z</code> - emitter toggle</li>
+		<li><code>X</code> - emitter on</li>
+		<li><code>C</code> - next emitter</li>
+		<li><code>V</code> - previous emitter</li>
+		<li><code>J</code> - zoom out</li>
+		<li><code>K</code> - zoom in</li>
 	</ul>
-	
+	</div>
+	</div>
+	<br>
 	
 	<h5>Demo 3. Soft-body Test: "Bamboo"</h5>
 	<p>

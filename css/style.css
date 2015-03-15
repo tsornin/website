@@ -45,27 +45,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-style: normal;
 	line-height: 32px;
 }
-/* Turns out regular Tw Cen MT looks better than bold for the sidebar. */
-h2 {
-	letter-spacing: 0.05em;
-}
 
 /* Header sizes */
-h1 { font-size: 32px; } /* Banner text */
-h2 { font-size: 18px; } /* Sidebar titles */
-h3 { font-size: 24px; } /* Content title */
-h5 { font-size: 18px; } /* Content sub-headers */
-
-/* Mini-text */
-h4 { /* TODO: this shouldn't really be a header */
-	font-size: 12px;
-	color: gray;
-}
-
-/* Sub-header separater */
-h5 {
-	border-top: 1px solid gray;
-}
+/* TODO: group headers by div id so we don't go down to h6 */
+h1 { font-size: 32px; } /* Header title */
+h2 { font-size: 18px; letter-spacing: 0.05em; } /* Sidebar title. Turns out regular Tw Cen MT looks better than bold for the sidebar. */
+h3 { font-size: 24px; } /* Content h1 */
+h4 { font-size: 12px; color: gray; } /* Content date. TODO: this shouldn't be a header */
+h5 { font-size: 18px; border-top: 1px solid gray; } /* Content h2 with separater */
+h6 { font-size: 16px; }
 
 /** Serif body **/
 @font-face {
@@ -78,16 +66,16 @@ p,
 ol, ul, li,
 dl, dt, dd,
 th, tr, td {
+	font-family: "Constantia", serif;
 	font-size: 14px;
 	line-height: 28px;
-	font-family: "Constantia", serif;
 }
 
 /** Monospaced code **/
 code {
+	font-family: "Courier New", monospace;
 	font-size: 14px;
 	line-height: 24px;
-	font-family: "Courier New", monospaced;
 	white-space: nowrap;
 }
 
@@ -420,9 +408,53 @@ div #content img {
 	border: 1px solid gray;
 }
 
+/* Round portrait */
 div #portrait img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 50%;
+}
+
+/*******************************
+	"CONTROLS" SLIDING PANEL
+*******************************/
+
+div #content .slide_header {
+	cursor: pointer;
+}
+div #content .slide_header:hover,
+div #content .slide_header:active {
+	color: #55c9c9;
+	text-decoration: none;
+}
+div #content .slide_header .slide_icon {
+	font-family: 'Courier New', monospace;
+	font-size: 14px;
+	line-height: 32px;
+}
+div #content .slide_header .slide_title {
+	font-family: 'TwCenMTRegular', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 32px;
+}
+
+div #content .slide_content_sub {
+	padding-left: 12px;
+}
+div #content .slide_content ul {
+	margin-bottom: 8px;
+	/*border-left: 1px solid #a6a6a6;*/
+}
+div #content .slide_content ul li {
+	margin-left: 4px;
+	list-style-type: none;
+}
+div #content .slide_content code {
+	border: 1px solid #a6a6a6;
+	border-radius: 20%;
+	padding-left: 4px;
+	padding-right: 4px;
 }

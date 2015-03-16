@@ -194,7 +194,7 @@ div #content a img:hover {
 
 /* Paragraph spacing */
 div #content p {
-	margin-bottom: 16px;
+	margin-bottom: 8px;
 }
 
 /* Bullet-lists */
@@ -454,7 +454,7 @@ div #content .slide_content ul li {
 }
 div #content .slide_content code {
 	border: 1px solid #a6a6a6;
-	border-radius: 20%;
+	border-radius: 4px;
 	padding-left: 4px;
 	padding-right: 4px;
 }

@@ -52,7 +52,7 @@ h1 { font-size: 32px; } /* Header title */
 h2 { font-size: 18px; letter-spacing: 0.05em; } /* Sidebar title. Turns out regular Tw Cen MT looks better than bold for the sidebar. */
 h3 { font-size: 24px; } /* Content h1 */
 h4 { font-size: 12px; color: gray; } /* Content date. TODO: this shouldn't be a header */
-h5 { font-size: 18px; border-top: 1px solid gray; } /* Content h2 with separater */
+h5 { font-size: 18px; border-top: 1px solid rgba(0, 0, 0, 0.2); } /* Content h2 with separater */
 h6 { font-size: 16px; }
 
 /** Serif body **/
@@ -242,7 +242,7 @@ div #content th {
 	color: gray;
 	font-weight: normal;
 	font-style: normal;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 div #content blockquote {
@@ -287,8 +287,7 @@ div #container_header {
 div #header {
 	height: 80px;
 	width: 896px;
-	/*border-bottom: 3px solid #000;*/ /* This is ugly */
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	/*background: transparent url('img/header-bg_portrait.png') left top;*/
 } div #header_sub {
 	margin-top: 8px; /* Because aligning to bottom is too hard */
@@ -340,17 +339,35 @@ div #container_content {
 		/* Position flag text on flag image */
 		div #sidebar h2 {
 			text-indent: 56px;
+			position: relative;
+			z-index: 1;
+		}
+		div #sidebar h2:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0; bottom: 0; left: 0; right: 0;
 			background: transparent url('img/sidebar-h2.png') no-repeat right top;
+			opacity: 0.4;
 		}
 		div #sidebar h2 img {
 			position: absolute; /* Yucky, but ignoring text-indent is hard */
-			left: 32px;
+			left: 16px;
 		}
 
 		/* Bar behind <li> elements */
 		div #sidebar ul {
-			background: transparent url('img/sidebar-ul.png') repeat-y right top;
 			padding-bottom: 16px;
+			position: relative;
+			z-index: 1;
+		}
+		div #sidebar ul:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0; bottom: 0; left: 0; right: 0;
+			background: transparent url('img/sidebar-ul.png') repeat-y right top;
+			opacity: 0.4;
 		}
 		/* Position <li> in front of bar, no bullets */
 		div #sidebar ul li {
@@ -358,7 +375,16 @@ div #container_content {
 			line-height: 32px;
 			list-style-type: none;
 			text-indent: 48px;
+			position: relative;
+			z-index: 1;
+		}
+		div #sidebar ul li:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0; bottom: 0; left: 0; right: 0;
 			background: transparent url('img/sidebar-li_asterisk.png') no-repeat right top;
+			opacity: 0.4;
 		}
 
 		div #sidebar a {
@@ -369,14 +395,23 @@ div #container_content {
 		div #sidebar_second {}
 		div #sidebar_third {}
 		div #sidebar_fourth h2 {
+			position: relative;
+			z-index: 1;
+		}
+		div #sidebar_fourth h2:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0; bottom: 0; left: 0; right: 0;
 			background: transparent url('img/sidebar-h2_bottom.png') no-repeat right top;
+			opacity: 0.4;
 		}
 
 div #footer {
 	clear: both;
 	height: 64px;
 	width: 896px;
-	border-top: 1px solid gray;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	/*background: transparent url('img/footer-bg_portrait.png') left top;*/
 } div #footer_sub {
 	margin-top: 0px;
@@ -405,7 +440,7 @@ div #content img {
 	margin-left: 0px;
 	margin-right: 13px;
 	padding: 2px;
-	border: 1px solid gray;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* Round portrait */

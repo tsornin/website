@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<?php include("file_links.php"); ?>
+
+<html>
+<head>
+	<title>Bruno Li</title>
+	<link href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/"; ?>css/style-secret.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="favicon.png" type="image/png">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$(".slide_content").hide();
+	$(".slide_header").click(function(){
+		$(this).next().slideToggle("fast", "linear");
+		$(this).children().first().html(($(this).children().first().html() == "[-]") ? "[+]" : "[-]");
+	});
+});
+</script>
+
+<div id="container_all">
+	<div id="container_content">
+
+<div id="content">
+<div id="content_sub">
+
+
+<h3>Japan 2015</h3>
+<h4>April 2015</h4>
+<h5>&nbsp;</h5>
+
+<?php // Potato temple thumbnails
+$pics = scandir( 'img/japan2015' ); sort( $pics, SORT_NATURAL );
+$thumbs = scandir( 'img/japan2015-thumb' ); sort( $thumbs, SORT_NATURAL );
+for ( $i = 2; $i < count( $pics ); $i++ ) {
+	echo '<a href="img/japan2015/' . $pics[ $i ] . '" target="_blank"><img src="img/japan2015-thumb/' . $thumbs[ $i ] . '" alt="' . $thumbs[ $i ] . '"></a>';
+}
+?>
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+
+		<div id="container_content_clear">
+		</div> <!--end container_content_clear-->
+
+	</div> <!--end container_content-->
+
+</div> <!--end container_all-->
+
+</body>
+</html>

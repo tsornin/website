@@ -1,0 +1,218 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<?php include("file_links.php"); ?>
+
+<html>
+<head>
+	<title>Bruno Li</title>
+	<link href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/"; ?>css/style.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="favicon.png" type="image/png">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$(".slide_content").hide();
+	$(".slide_header").click(function(){
+		$(this).next().slideToggle("fast", "linear");
+		$(this).children().first().html(($(this).children().first().html() == "[-]") ? "[+]" : "[-]");
+	});
+});
+</script>
+
+<div id="container_all">
+	<div id="container_content_secret"> <!-- this is a hack to hide the sidebar bg -->
+
+<div id="content">
+<div id="content_sub">
+
+<div id="resume">
+
+<?php
+function resume_item_title_container( $company, $role, $date, $location ) {
+	return '
+<div class="resume_item_title_container">
+	<div class="left">
+		<span class="resume_company">' . $company . '</span>
+		<br>
+		<span class="resume_role">' . $role . '</span>
+		<br>
+	</div>
+	<div class="right">
+		<span class="resume_date">' . $date . '</span>
+		<br>
+		<span class="resume_location">' . $location . '</span>
+		<br>
+	</div>
+</div>';
+}
+?>
+
+<h3>Bruno Li</h3>
+<h4>
+http://bruno-li.com/
+&bull;
++1 954 253 8097
+&bull;
+bruno.sie.li@gmail.com
+</h4>
+
+<h5>EDUCATION</h5>
+
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"University of Texas at Austin",
+	"Bachelor of Computer Science",
+	"August 2009 - May 2012",
+	"Austin, TX"); ?>
+<p>
+	Turing Scholars Honors Program.
+</p>
+<ul>
+	<li>GPA: 3.5/4.0</li>
+</ul>
+</div>
+
+<h5>WORK</h5>
+
+<!--
+	things you learned | key stories:
+		taphotel: agile, apple app store | bad offshore code optimization
+		wildcatz: bad pivoting, objective-c, server guilds | possessed ipad
+		agency: semi-lead, start-to-finish reskin | refactor vs rebuild
+		dragons3d: 3d on mobile, 30-man team | ???
+-->
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"Pocket Gems",
+	"Mobile Engineer",
+	"June 2012 - Present",
+	"San Francisco, CA"); ?>
+<p>
+	Worked closely with artists, product managers, and QA to deliver new features and bugfixes on a weekly release cycle.
+</p>
+<ul>
+	<li>Tap Pet Hotel</li>
+	<li>Epic Empire</li>
+	<li>Runway Life</li>
+	<li>War Dragons</li>
+</ul>
+</div>
+
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"University of Texas at Austin",
+	"Proctor: Algorithms and Data Structures",
+	"September 2011 - December 2011",
+	"Austin, TX"); ?>
+<ul>
+	<li>Tutored students in data structures and OOP concepts; wrote scripts to grade assignments</li>
+	<li>Improved rendering functionality of annual students' "Critterfest" programming contest</li>
+</ul>
+</div>
+
+<h5>PROJECTS</h5>
+<!-- 
+	interesting problems you encountered and solved:
+		"caltrops" algorithm
+		constraint based impulse physics (pgs solver)
+		contact graph (islands)
+		convex-convex collision (sat + minkowski)
+		exponential camera
+		aabb manipulation
+	notes about thesis:
+		>so here I am writing my thesis and the head of the cs honors department, calvin lin, is my second reader so i see him every other week
+		>he keeps dropping hints that, maybe, if i follow all his writing advice, this could be the best thesis for 2012
+		>2012 was the first year AMD sponsored the cash prize for best thesis; as a result they made the last call for the winner, where in previous years it was probably just lin
+		>they didn't like my thesis, no quantitative results
+		>but at that point lin had been dropping hints at me for so long he felt bad about it
+		>i'm pretty sure that's how i won the first runner-up thesis award ever awarded
+		>tfw Calvin Lin Favorite Thesis Award
+-->
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"\"Physically-based Modeling of Interactive Plants\"",
+	"Honors Thesis", // CS 379H
+	"August 2011 - May 2012",
+	""); ?>
+<!-- <p>
+</p> -->
+<ul>
+	<li>Independent research work combining L-system tree generation with physical simulation</li>
+	<li>Modeled soft-body plants and wind, rain, and fire effects using my own physics engine</li>
+	<li>Runner-up for UTCS Best Undergraduate Honors Thesis Award 2012</li>
+</ul>
+</div>
+
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"\"Umbrella\"",
+	"Undergraduate Reading and Research", // CS 370
+	"November 2009 - November 2012",
+	""); ?>
+<p>
+	Built a 2D physics engine in C++ with OpenGL and SDL to model rigid bodies, soft bodies, and point particles.
+</p>
+<ul>
+	<li>Convex-polygon based collision detection</li>
+	<li>Impulse-based rigid body collision response with PGS solver (stacking and friction)</li>
+	<li>Island detection for rigid body body-contact graph and soft body particle-constraint graph</li>
+	<li>Verlet-based soft-body physics</li>
+<!--
+	interesting problems you encountered (that aren't good interview questions):
+		"caltrops" algorithm
+		constraint based impulse physics (pgs solver)
+		contact graph
+		convex-convex collision
+		verlet contacts
+		exponential camera
+		aabb manipulation
+-->
+</ul>
+</div>
+
+<!-- 
+	school projects tech you didn't include:
+		swe - git, java, python
+		os jos - c
+		sys mips - verilog
+		ai heuristic - java
+		data crawler - java
+ -->
+
+<h5>SKILLS</h5>
+
+<div class="resume_item">
+	Programming languages: Objective-C, C++; familiar with Java, PHP, Python
+	<br>
+	Other tech: Adobe Photoshop; familiar with HTML/CSS
+</div>
+
+<h5>STUFF ON MY MOM'S FRIDGE</h5>
+
+<div class="resume_item">
+	Speaks Chinese (Mandarin, Shanghainese). Once survived for a week in Japan.
+	<br>
+	Plays the piano, guitar, and ocarina.
+	<br>
+	Once deadlifted 300 pounds (2.14x bodyweight).
+	<br>
+</div>
+
+
+</div> <!--end resume-->
+
+</div> <!--end content_sub-->
+</div> <!--end content-->
+
+		<div id="container_content_clear">
+		</div> <!--end container_content_clear-->
+
+	</div> <!--end container_content-->
+
+</div> <!--end container_all-->
+
+</body>
+</html>

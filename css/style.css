@@ -1,9 +1,9 @@
 /* CSS reset */
-div,
+body, div, p,
 h1, h2, h3, h4, h5, h6,
-p,
 ol, ul, li,
 dl, dt, dd,
+th, tr, td,
 img {
 	margin: 0px;
 	padding: 0px;
@@ -62,7 +62,7 @@ h6 { font-size: 16px; }
 	src: url( "type/Constantia.ttf" ) format( "truetype" );
 }
 
-p,
+body, div, p,
 ol, ul, li,
 dl, dt, dd,
 th, tr, td {
@@ -77,6 +77,18 @@ code {
 	font-size: 14px;
 	line-height: 24px;
 	white-space: nowrap;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	border-top: 1px solid lightgray;
+	/*
+	background-image: -webkit-linear-gradient(left, white, gray, white);
+	background-image:    -moz-linear-gradient(left, white, gray, white);
+	background-image:     -ms-linear-gradient(left, white, gray, white);
+	background-image:      -o-linear-gradient(left, white, gray, white);
+	*/
 }
 
 /*******************************
@@ -197,21 +209,28 @@ div #content p {
 	margin-bottom: 16px;
 }
 
-/* Bullet-lists */
-div #content ul {
+/* Lists */
+div #content ul, ol, dl {
 	margin-bottom: 16px;
 }
+
 div #content ul li {
 	margin-left: 16px;
 	list-style-type: circle;
 }
 
-div #content ol {
-	margin-bottom: 16px;
-}
 div #content ol li {
 	margin-left: 16px;
 	list-style: decimal;
+}
+
+div #content dl dt {
+	display: list-item;
+	margin-left: 16px;
+	list-style-type: circle;
+}
+div #content dl dd {
+	margin-left: 32px;
 }
 
 /* Citations */
@@ -221,19 +240,6 @@ div #content ul.citations {
 div #content ul.citations li {
 	margin-left: 16px;
 	list-style-type: none;
-}
-
-/* Link list */
-div #content dl {
-	margin-bottom: 16px;
-}
-div #content dl dt {
-	display: list-item;
-	margin-left: 16px;
-	list-style-type: circle;
-}
-div #content dl dd {
-	margin-left: 32px;
 }
 
 /* Tables */
@@ -254,6 +260,74 @@ div #content blockquote {
 }
 div #content blockquote:before { content: open-quote; font-weight: bold; }
 div #content blockquote:after { content: close-quote; font-weight: bold; }
+
+/** Resume **/
+
+div #content div #resume
+body, div, p,
+/*h1, h2, h3, h4, h5, h6,*/
+ol, ul, li,
+dl, dt, dd,
+th, tr, td,
+img {
+	font-family: 'TwCenMTRegular', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 18px;
+}
+div #content div #resume h3 {
+	font-size: 32px;
+	line-height: 48px;
+	text-align: center;
+}
+div #content div #resume h4 {
+	font-size: 14px;
+	line-height: 8px;
+	color: gray;
+	text-align: center;
+}
+div #content div #resume h5 {
+	line-height: 32px;
+	text-align: center;
+	margin-top: 12px;
+	padding-top: 0px;
+}
+div #content div #resume p {
+	margin-bottom: 0px;
+}
+div #content div #resume ul, ol, li {
+	margin-bottom: 0px;
+}
+.center { margin: 0 auto; }
+.right { float: right; }
+.left { float: left; }
+.resume_item_title_container {
+	overflow: hidden;
+	width: 100%;
+}
+.resume_item {
+	margin-bottom: 16px;
+}
+.resume_company {
+	float: left;
+	font-weight: bold;
+}
+.resume_role {
+	float: left;
+	font-style: oblique;
+}
+.resume_date {
+	float: right;
+	color: gray;
+}
+.resume_location {
+	float: right;
+	color: gray;
+}
+div #content div #resume ul ol dl {
+	margin-top: 0px;
+}
 
 /*******************************
 	DIV GEOMETRY

@@ -300,40 +300,48 @@ div #content blockquote:after { content: close-quote; font-weight: bold; }
 
 /** Resume **/
 
-div #content div #resume
-body, div, p,
-/*h1, h2, h3, h4, h5, h6,*/
-ol, ul, li,
-dl, dt, dd,
-th, tr, td,
-img {
+div #resume body,
+div #resume div,
+div #resume p,
+div #resume ol,
+div #resume ul,
+div #resume li,
+div #resume dl,
+div #resume dt,
+div #resume dd,
+div #resume th,
+div #resume tr,
+div #resume td {
 	font-family: 'TwCenMT', sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 16px;
 	line-height: 18px;
 }
-div #content div #resume h3 {
+div #resume h3 {
 	font-size: 32px;
 	line-height: 48px;
 	text-align: center;
 }
-div #content div #resume h4 {
+div #resume h4 {
 	font-size: 14px;
 	line-height: 8px;
 	color: gray;
 	text-align: center;
 }
-div #content div #resume h5 {
+div #resume h5 {
 	line-height: 32px;
 	text-align: center;
 	margin-top: 12px;
 	padding-top: 0px;
 }
-div #content div #resume p {
+div #resume p {
 	margin-bottom: 0px;
 }
-div #content div #resume ul, ol, li {
+div #resume ul,
+div #resume ol,
+div #resume li {
+	margin-top: 0px;
 	margin-bottom: 0px;
 }
 .center { margin: 0 auto; }
@@ -361,9 +369,6 @@ div #content div #resume ul, ol, li {
 .resume_location {
 	float: right;
 	color: gray;
-}
-div #content div #resume ul ol dl {
-	margin-top: 0px;
 }
 
 /*******************************

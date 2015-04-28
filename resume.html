@@ -23,7 +23,7 @@ $(document).ready(function(){
 </script>
 
 <div id="container_all">
-	<div id="container_content_secret"> <!-- this is a hack to hide the sidebar bg -->
+	<div id="container_content_no_sidebar_bg">
 
 <div id="content">
 <div id="content_sub">
@@ -50,39 +50,28 @@ function resume_item_title_container( $company, $role, $date, $location ) {
 }
 ?>
 
+<!-- story: i wrote this website and resume in PHP + HTML/CSS, but that's the extent of my webmastering abilities -->
 <h3>Bruno Li</h3>
 <h4>
-bruno.sie.li@gmail.com
+&nbsp;&nbsp;&nbsp; <!-- stupid way to line up the bullets -->
+http://bruno-li.com/
 &bull;
 +1 954 253 8097
 &bull;
-http://bruno-li.com/
+bruno.sie.li@gmail.com
 </h4>
 
-<h5>EDUCATION</h5>
-
-<div class="resume_item">
-<?php echo resume_item_title_container(
-	"University of Texas at Austin",
-	"Bachelor of Computer Science",
-	"August 2009 - May 2012",
-	"Austin, TX"); ?>
-<p>
-	Turing Scholars Honors Program.
-</p>
-<ul>
-	<li>GPA: 3.5/4.0</li>
-</ul>
-</div>
+<!--
+	the PROFILE is something like "3 years experience in iOS engineering; specializes in bringing code-reliant art to life; now seeking to contribute skills to INSERT COMPANY NAME HERE"
+	this isn't included (yet) because you aren't big enough to have a personal brand and niche spanning multiple jobs yet (www.forbes.com/sites/dailymuse/2014/08/28/the-resume-summary-statement-when-you-need-one-and-how-to-do-it/)
+	an OBJECTIVE is useless because it's a buy, not a sell
+-->
+<!-- <h5>PROFILE</h5> -->
 
 <h5>WORK</h5>
 
 <!--
-	things you learned | key stories:
-		taphotel: agile, apple app store | bad offshore code optimization
-		wildcatz: bad pivoting, objective-c, server guilds | possessed ipad
-		agency: semi-lead, start-to-finish reskin | refactor vs rebuild
-		dragons3d: 3d on mobile, 30-man team | ???
+	this is a non-standard place to put skills, but i like it more than the standard wall of skills (and it makes the pocket-gems section look bigger, which is a bonus)
 -->
 <div class="resume_item">
 <?php echo resume_item_title_container(
@@ -91,16 +80,24 @@ http://bruno-li.com/
 	"June 2012 - Present",
 	"San Francisco, CA"); ?>
 <p>
-	Worked closely with artists, product managers, and QA to deliver new features and bugfixes on a weekly release cycle.
+	Worked closely with artists, product managers, and QA on both build and live games. Seamlessly assumed and improved team engineering conventions. Delivered new features and bugfixes with minimal direction, shipping several casual and hardcore portfolio games:
 </p>
 <ul>
-	<li>Tap Pet Hotel</li>
-	<li>Epic Empire</li>
-	<li>Runway Life</li>
-	<li>War Dragons</li>
+	<!-- story: bad offshore code optimization -->
+	<li>Tap Pet Hotel - maintained live game on a weekly agile release cycle</li>
+	<!-- story: wildcatz died to bad pivoting but guilds returned in dragons -->
+	<!-- story: the posessed ipad -->
+	<li>Epic Empire - designed "guilds" API with server team; independently added a "barbershop" feature</li>
+	<!-- story: semi-lead dynamics -->
+	<!-- story: refactor vs rebuild -->
+	<li>Runway Life - start-to-finish refactor and reskin of an existing game</li>
+	<li>War Dragons - next-generation 3d experience on mobile</li>
 </ul>
 </div>
 
+<!--
+	maybe you don't want this? it's not really relevant unless you're dying for more interns
+-->
 <div class="resume_item">
 <?php echo resume_item_title_container(
 	"University of Texas at Austin",
@@ -113,16 +110,25 @@ http://bruno-li.com/
 </ul>
 </div>
 
+<h5>EDUCATION</h5>
+
+<div class="resume_item">
+<?php echo resume_item_title_container(
+	"University of Texas at Austin",
+	"Bachelor of Computer Science",
+	"August 2009 - May 2012",
+	"Austin, TX"); ?>
+<p>
+	Turing Scholars Honors Program. <!-- Graduated in three years. --> Emphasis in game technology and physical simulation.
+</p>
+<ul>
+	<li>GPA: 3.5/4.0</li>
+</ul>
+</div>
+
 <h5>PROJECTS</h5>
 <!-- 
-	interesting problems you encountered and solved:
-		"caltrops" algorithm
-		constraint based impulse physics (pgs solver)
-		contact graph (islands)
-		convex-convex collision (sat + minkowski)
-		exponential camera
-		aabb manipulation
-	notes about thesis:
+	story:
 		>so here I am writing my thesis and the head of the cs honors department, calvin lin, is my second reader so i see him every other week
 		>he keeps dropping hints that, maybe, if i follow all his writing advice, this could be the best thesis for 2012
 		>2012 was the first year AMD sponsored the cash prize for best thesis; as a result they made the last call for the winner, where in previous years it was probably just lin
@@ -130,6 +136,8 @@ http://bruno-li.com/
 		>but at that point lin had been dropping hints at me for so long he felt bad about it
 		>i'm pretty sure that's how i won the first runner-up thesis award ever awarded
 		>tfw Calvin Lin Favorite Thesis Award
+
+	story: in response to my first draft, advisor donald fussell mentioned that my english was very good. i thought this was an odd remark, but it turns out most first drafts have terrible grammar
 -->
 <div class="resume_item">
 <?php echo resume_item_title_container(
@@ -137,8 +145,6 @@ http://bruno-li.com/
 	"Honors Thesis", // CS 379H
 	"August 2011 - May 2012",
 	""); ?>
-<!-- <p>
-</p> -->
 <ul>
 	<li>Independent research work combining L-system tree generation with physical simulation</li>
 	<li>Modeled soft-body plants and wind, rain, and fire effects using my own physics engine</li>
@@ -146,6 +152,19 @@ http://bruno-li.com/
 </ul>
 </div>
 
+<!--
+	story: this was built as C++11 was being rolled out. i used to be quite the C++ devotee; i still have some thoughts about it, mostly the standard ones
+
+	these are some interesting problems i encountered, sorted by difficulty. at pocket-gems (where i spent a lot of time thinking about engineering interviewing), i tried to tap them for interview questions, but they're too specific to be useful.
+		"caltrops" algorithm
+		constraint based impulse physics (pgs solver)
+		convex-convex collision
+		double graph
+		contact graph (island detection with modified cc)
+		verlets and the ground
+		exponential camera
+		aabb manipulation
+-->
 <div class="resume_item">
 <?php echo resume_item_title_container(
 	"\"Umbrella\"",
@@ -153,23 +172,13 @@ http://bruno-li.com/
 	"November 2009 - November 2012",
 	""); ?>
 <p>
-	Built a 2D physics engine in C++ with OpenGL and SDL to model rigid bodies, soft bodies, and point particles.
+	Designed and built a 2D physics engine in C++ with OpenGL and SDL, featuring:
 </p>
 <ul>
-	<li>Convex-polygon based collision detection</li>
-	<li>Impulse-based rigid body collision response with PGS solver (stacking and friction)</li>
-	<li>Island detection for rigid body body-contact graph and soft body particle-constraint graph</li>
+	<li>Convex-polygon-based collision detection for rigid bodies and particles</li>
+	<li>Impulse-based rigid body physics with stacking and friction</li>
 	<li>Verlet-based soft-body physics</li>
-<!--
-	interesting problems you encountered (that aren't good interview questions):
-		"caltrops" algorithm
-		constraint based impulse physics (pgs solver)
-		contact graph
-		convex-convex collision
-		verlet contacts
-		exponential camera
-		aabb manipulation
--->
+	<li>Island detection for rigid body body-contact graph and soft body particle-constraint graph</li>
 </ul>
 </div>
 
@@ -181,24 +190,27 @@ http://bruno-li.com/
 		ai heuristic - java
 		data crawler - java
  -->
-
 <h5>SKILLS</h5>
 
 <div class="resume_item">
-	Programming languages: Objective-C, C++; familiar with Java, PHP, Python
-	<br>
-	Other tech: Adobe Photoshop; familiar with HTML/CSS
+	<strong>Programming languages:</strong>
+	<em>proficient:</em> Objective-C, C++
+	<em>familiar:</em> Java, PHP, Python
+<!-- </div> -->
+<br>
+<!-- <div class="resume_item"> -->
+	<strong>Other tech:</strong>
+	<em>proficient:</em> Git, Adobe Photoshop
+	<em>familiar:</em> HTML/CSS
 </div>
 
-<h5>STUFF ON MY MOM'S FRIDGE</h5>
+<h5>OTHER ACTIVITIES</h5>
 
 <div class="resume_item">
-	Speaks Chinese (Mandarin, Shanghainese). Once survived for a week in Japan.
-	<br>
-	Plays the piano, guitar, and ocarina.
-	<br>
-	Once deadlifted 300 pounds (2.14x bodyweight).
-	<br>
+	Speaks Mandarin and the rarer Shanghainese; once survived for a week in Japan.
+	Plays piano competently and sometimes <em>f&#250;r die linke Hand alleine</em>; produces recognizable tunes on the guitar and ocarina.
+	Able to deadlift 300 pounds.
+	Spends a lot of time thinking about technical interview process.
 </div>
 
 

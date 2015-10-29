@@ -185,19 +185,28 @@ div #header p {
 }
 
 /* "Default" link style */
-div #header p a:link,
-div #header p a:focus {
+div #header a:link,
+div #header a:focus {
 	color: #a6a6a6;
 	text-decoration: none;
 }
-div #header p a:visited {
+div #header a:visited {
 	color: #5a5a5a;
 	text-decoration: none;
 }
-div #header p a:hover,
-div #header p a:active {
+div #header a:hover,
+div #header a:active {
 	color: #55c9c9;
 	text-decoration: underline;
+}
+
+div #header_business {
+	color: gray;
+	font-family: 'TwCenMT', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 18px;
 }
 
 /** Content **/
@@ -412,6 +421,14 @@ div #header {
 	margin-left: 16px;
 	margin-right: 16px;
 	float: left;
+	text-align: left;
+} div #header_business {
+	margin-top: 8px; /* Because aligning to bottom is too hard */
+	/* margin-bottom: 16px; */
+	margin-left: 16px;
+	margin-right: 16px;
+	float: right;
+	text-align: right;
 }
 
 div #container_content {

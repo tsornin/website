@@ -85,11 +85,23 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header sizes */
 /* TODO: group headers by div id so we don't go down to h6 */
-h1 { font-size: 32px; } /* Header title */
-h2 { font-size: 18px; letter-spacing: 0.05em; } /* Sidebar title. Turns out regular Tw Cen MT looks better than bold for the sidebar. */
-h3 { font-size: 24px; } /* Content h1 */
-h4 { font-size: 12px; color: gray; } /* Content date. TODO: this shouldn't be a header */
-h5 { font-size: 18px; border-top: 1px solid gray; } /* Content h2 with separator */
+
+/* The giant name at the top */
+h1 { font-size: 32px; }
+
+/* Sidebar title. Regular looks better than bold */
+h2 { font-size: 18px; letter-spacing: 0.05em; }
+
+/* Content h1 */
+h3 { font-size: 24px; }
+
+/* Content date */
+/* TODO: this shouldn't be a header */
+h4 { font-size: 12px; color: gray; }
+
+/* Content h2, has a separator at the top */
+h5 { font-size: 18px; border-top: 1px solid gray; }
+
 h6 { font-size: 16px; }
 
 /** Serif body **/
@@ -105,14 +117,18 @@ dl, dt, dd,
 th, tr, td {
 	font-family: "Constantia", serif;
 	font-size: 14px;
-	line-height: 28px;
+	line-height: 26px;
+}
+
+.small_caps {
+	font-variant: small-caps;
 }
 
 /** Monospaced code **/
 code {
 	font-family: "Courier New", monospace;
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 26px;
 	white-space: nowrap;
 }
 
@@ -206,7 +222,7 @@ div #header_business {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 22px;
 }
 
 /** Content **/
@@ -232,7 +248,7 @@ div #content a:active {
 	Two notes:
 	1. Sidebar links also start with "http" so don't grab those by accident.
 	2. If you somehow end up needing to fully link yourself, you can turn off this rule with another rule:
-		a[href^="http://www.mydomain.com"] { background: none; padding-right: 0; }
+		a[href^="http://www.mydomain.com"] { background: none; padding-right: 0px; }
 */
 div #content a[href^="http"] {
 	background: url('img/external_arrow.png') center right no-repeat;
@@ -412,7 +428,6 @@ div #container_header {
 div #header {
 	height: 80px;
 	width: 896px;
-	/*border-bottom: 3px solid #000;*/ /* This is ugly */
 	border-bottom: 1px solid gray;
 	/*background: transparent url('img/header-bg_portrait.png') left top;*/
 } div #header_sub {
@@ -502,7 +517,24 @@ div #container_content {
 		div #sidebar_second {}
 		div #sidebar_third {}
 		div #sidebar_fourth h2 {
+			height: 16px;
 			background: transparent url('img/sidebar-h2_bottom.png') no-repeat right top;
+		}
+
+		div #sidebar_blogroll {
+			margin-top: 8px;
+			margin-bottom: 8px;
+			margin-left: 8px;
+			margin-right: 8px;
+			text-align: center;
+		}
+		div #sidebar_blogroll_title {
+			font-size: 14px;
+			line-height: 26px;
+		}
+		div #sidebar_blogroll_links {
+			font-size: 12px;
+			line-height: 20px;
 		}
 
 div #footer {
@@ -510,7 +542,6 @@ div #footer {
 	height: 64px;
 	width: 896px;
 	border-top: 1px solid gray;
-	/*background: transparent url('img/footer-bg_portrait.png') left top;*/
 } div #footer_sub {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -541,12 +572,43 @@ div #content img {
 	border: 1px solid gray;
 }
 
-/* Round portrait */
+/* Portrait avatar */
 div #portrait img {
+	width: 112px;
+	height: 112px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 50%;
+}
+
+/*******************************
+	SHOWCASE
+*******************************/
+
+div #content #showcase_inner {
+	display: table;
+	margin: 0 auto;
+}
+
+div #content #showcase img {
+	margin-top: 0px;
+}
+
+div #content #showcase a[href^="http"] {
+	background: none;
+	padding-right: 0px;
+}
+
+div #content .appicon img {
+	width: 58px;
+	height: 58px;
+	border-radius: 20%;
+	margin-right: 5px;
+}
+
+div #content .appicon.mouseover img {
+	border-color: white;
 }
 
 /*******************************

@@ -85,11 +85,23 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header sizes */
 /* TODO: group headers by div id so we don't go down to h6 */
-h1 { font-size: 32px; } /* Header title */
-h2 { font-size: 18px; letter-spacing: 0.05em; } /* Sidebar title. Turns out regular Tw Cen MT looks better than bold for the sidebar. */
-h3 { font-size: 24px; } /* Content h1 */
-h4 { font-size: 12px; color: gray; } /* Content date. TODO: this shouldn't be a header */
-h5 { font-size: 18px; border-top: 1px solid gray; } /* Content h2 with separator */
+
+/* The giant name at the top */
+h1 { font-size: 32px; }
+
+/* Sidebar title. Regular looks better than bold */
+h2 { font-size: 18px; letter-spacing: 0.05em; }
+
+/* Content h1 */
+h3 { font-size: 24px; }
+
+/* Content date */
+/* TODO: this shouldn't be a header */
+h4 { font-size: 12px; color: gray; }
+
+/* Content h2, has a separator at the top */
+h5 { font-size: 18px; border-top: 1px solid gray; }
+
 h6 { font-size: 16px; }
 
 /** Serif body **/
@@ -412,7 +424,6 @@ div #container_header {
 div #header {
 	height: 80px;
 	width: 896px;
-	/*border-bottom: 3px solid #000;*/ /* This is ugly */
 	border-bottom: 1px solid gray;
 	/*background: transparent url('img/header-bg_portrait.png') left top;*/
 } div #header_sub {
@@ -502,6 +513,7 @@ div #container_content {
 		div #sidebar_second {}
 		div #sidebar_third {}
 		div #sidebar_fourth h2 {
+			height: 16px;
 			background: transparent url('img/sidebar-h2_bottom.png') no-repeat right top;
 		}
 
@@ -510,7 +522,6 @@ div #footer {
 	height: 64px;
 	width: 896px;
 	border-top: 1px solid gray;
-	/*background: transparent url('img/footer-bg_portrait.png') left top;*/
 } div #footer_sub {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -541,12 +552,41 @@ div #content img {
 	border: 1px solid gray;
 }
 
-/* Round portrait */
+/* Portrait avatar */
 div #portrait img {
+	width: 128px; height: 128px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 50%;
+}
+
+/*******************************
+	SHOWCASE
+*******************************/
+
+div #content #showcase img {
+	margin-top: 0px;
+}
+
+div #content #showcase a[href^="http"] {
+	background: none;
+	padding-right: 0px;
+}
+
+div #content #showcase_inner {
+	display: table;
+	margin: 0 auto;
+}
+
+div #content .appicon img {
+	width: 58px;
+	height: 58px;
+	border-radius: 20%;
+}
+
+div #content .appicon.mouseover img {
+	border-color: white;
 }
 
 /*******************************

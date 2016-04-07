@@ -33,8 +33,23 @@ function rooturl( $path ) {
 				<h2>&nbsp;</h2>
 			</div>
 
+			<div id="sidebar_portrait">
 			<div id="portrait">
 				<img src="img/avatar_scarfa.png" alt="Picture of Bruno">
+			</div>
+			</div>
+
+			<div id="sidebar_blogroll">
+			<div id="sidebar_blogroll_title">
+				<span class="small_caps">Stuff I'm reading:</span>
+			</div>
+			<div id="sidebar_blogroll_links">
+				<a href="http://xkcd.com/">xkcd</a>
+				<a href="http://slatestarcodex.com/">Slate Star Codex</a>
+				<a href="http://www.theeffectiveengineer.com/">The Effective Engineer</a>
+				<a href="http://putthison.com/">Put This On</a>
+				<a href="https://www.reddit.com/r/fitness">r/fitness</a>
+			</div>
 			</div>
 
 		</div> <!--end sidebar-->

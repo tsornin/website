@@ -117,14 +117,18 @@ dl, dt, dd,
 th, tr, td {
 	font-family: "Constantia", serif;
 	font-size: 14px;
-	line-height: 28px;
+	line-height: 26px;
+}
+
+.small_caps {
+	font-variant: small-caps;
 }
 
 /** Monospaced code **/
 code {
 	font-family: "Courier New", monospace;
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 26px;
 	white-space: nowrap;
 }
 
@@ -218,7 +222,7 @@ div #header_business {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 22px;
 }
 
 /** Content **/
@@ -244,7 +248,7 @@ div #content a:active {
 	Two notes:
 	1. Sidebar links also start with "http" so don't grab those by accident.
 	2. If you somehow end up needing to fully link yourself, you can turn off this rule with another rule:
-		a[href^="http://www.mydomain.com"] { background: none; padding-right: 0; }
+		a[href^="http://www.mydomain.com"] { background: none; padding-right: 0px; }
 */
 div #content a[href^="http"] {
 	background: url('img/external_arrow.png') center right no-repeat;
@@ -517,6 +521,22 @@ div #container_content {
 			background: transparent url('img/sidebar-h2_bottom.png') no-repeat right top;
 		}
 
+		div #sidebar_blogroll {
+			margin-top: 8px;
+			margin-bottom: 8px;
+			margin-left: 8px;
+			margin-right: 8px;
+			text-align: center;
+		}
+		div #sidebar_blogroll_title {
+			font-size: 14px;
+			line-height: 26px;
+		}
+		div #sidebar_blogroll_links {
+			font-size: 12px;
+			line-height: 20px;
+		}
+
 div #footer {
 	clear: both;
 	height: 64px;
@@ -554,7 +574,8 @@ div #content img {
 
 /* Portrait avatar */
 div #portrait img {
-	width: 128px; height: 128px;
+	width: 112px;
+	height: 112px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -565,6 +586,11 @@ div #portrait img {
 	SHOWCASE
 *******************************/
 
+div #content #showcase_inner {
+	display: table;
+	margin: 0 auto;
+}
+
 div #content #showcase img {
 	margin-top: 0px;
 }
@@ -574,15 +600,11 @@ div #content #showcase a[href^="http"] {
 	padding-right: 0px;
 }
 
-div #content #showcase_inner {
-	display: table;
-	margin: 0 auto;
-}
-
 div #content .appicon img {
 	width: 58px;
 	height: 58px;
 	border-radius: 20%;
+	margin-right: 5px;
 }
 
 div #content .appicon.mouseover img {

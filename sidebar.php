@@ -35,7 +35,7 @@ function rooturl( $path ) {
 
 			<div id="sidebar_portrait">
 			<div id="portrait">
-				<img src="img/avatar_scarfa.png" alt="Picture of Bruno">
+				<img src="img/avatar_warby.png" alt="Picture of Bruno">
 			</div>
 			</div>
 

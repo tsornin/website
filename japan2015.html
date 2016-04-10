@@ -38,7 +38,7 @@ $(document).ready(function(){
 $pics = scandir( 'img/japan2015' ); sort( $pics, SORT_NATURAL );
 $thumbs = scandir( 'img/japan2015-thumb' ); sort( $thumbs, SORT_NATURAL );
 for ( $i = 2; $i < count( $pics ); $i++ ) {
-	echo '<a href="img/japan2015/' . $pics[ $i ] . '" target="_blank"><img src="img/japan2015-thumb/' . $thumbs[ $i ] . '" alt="' . $thumbs[ $i ] . '"></a>';
+	echo '<a href="img/japan2015/' . $pics[ $i ] . '"><img src="img/japan2015-thumb/' . $thumbs[ $i ] . '" alt="' . $thumbs[ $i ] . '"></a>';
 }
 ?>
 

@@ -588,7 +588,7 @@ div #portrait img {
 
 div #content #showcase_inner {
 	display: table;
-	margin: 0 auto;
+	margin: auto;
 }
 
 div #content #showcase img {
@@ -609,6 +609,19 @@ div #content .appicon img {
 
 div #content .appicon.mouseover img {
 	border-color: white;
+}
+
+/*******************************
+	SKETCHES
+*******************************/
+div #content .plain_img img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border: 0px;
 }
 
 /*******************************

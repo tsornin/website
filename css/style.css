@@ -164,11 +164,17 @@ div #sidebar a:active {
 	text-decoration: none;
 }
 /* Sidebar links fade */
+div #sidebar a:hover {
+	-webkit-transition:color 0s linear;
+	-moz-transition:color 0s linear;
+	-o-transition:color 0s linear;
+	transition:color 0s linear;
+}
 div #sidebar a {
-	-webkit-transition:color 0.2s linear;
-	-moz-transition:color 0.2s linear;
-	-o-transition:color 0.2s linear;
-	transition:color 0.2s linear;
+	-webkit-transition:color 0.3s linear;
+	-moz-transition:color 0.3s linear;
+	-o-transition:color 0.3s linear;
+	transition:color 0.3s linear;
 }
 
 /** Header **/
@@ -187,11 +193,17 @@ div #header h1 a:active {
 	text-decoration: none;
 }
 /* Big H1 link fades */
+div #header h1 a:hover {
+	-webkit-transition:color 0s linear;
+	-moz-transition:color 0s linear;
+	-o-transition:color 0s linear;
+	transition:color 0s linear;
+}
 div #header h1 a {
-	-webkit-transition:color 0.2s linear;
-	-moz-transition:color 0.2s linear;
-	-o-transition:color 0.2s linear;
-	transition:color 0.2s linear;
+	-webkit-transition:color 0.3s linear;
+	-moz-transition:color 0.3s linear;
+	-o-transition:color 0.3s linear;
+	transition:color 0.3s linear;
 }
 
 /* Bigger text in header */

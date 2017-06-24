@@ -89,11 +89,19 @@ because Font Squirrel blacklisted Tw Cen MT. Unfortunately, the rendering isn't 
 }
 
 /** Sans-serif headers **/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
 	font-family: 'TwCenMT', sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	line-height: 32px;
+}
+
+h4 {
+	font-family: 'TwCenMT', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 20px;
+	padding-bottom: 8px;
 }
 
 /* Header sizes */
@@ -109,7 +117,6 @@ h2 { font-size: 18px; letter-spacing: 0.05em; }
 h3 { font-size: 24px; }
 
 /* Content date */
-/* TODO: this shouldn't be a header */
 h4 { font-size: 12px; color: gray; }
 
 /* Content h2, has a separator at the top */

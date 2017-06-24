@@ -17,7 +17,8 @@ function rooturl( $path ) {
 			<div id="sidebar_second">
 				<h2><img src="<?=rooturl( "img/flagicon-art.png" ); ?>">art</h2>
 				<ul>
-					<li><a href="<?=rooturl( "art2d.html" ); ?>">Design</a></li>
+					<li><a href="<?=rooturl( "art2d-design.html" ); ?>">Design</a></li>
+					<li><a href="<?=rooturl( "art2d-illustration.html" ); ?>">Illustration</a></li>
 					<!-- <li><a href="<?=rooturl( "art3d.html" ); ?>">Modeling</a></li> -->
 				</ul>
 			</div>

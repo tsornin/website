@@ -4,7 +4,7 @@
 			<h1><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>">Bruno Li</a></h1>
 			<p>
 			<!--<img src="img/favicon-pg2_16x16.png">-->
-			<a href="http://pocketgems.com/about/team/">Sushi Eater</a>
+			<a href="http://pocketgems.com/about/#team">Sushi Eater III</a>
 			at
 			<a href="http://pocketgems.com/">Pocket Gems</a>
 			&bull;

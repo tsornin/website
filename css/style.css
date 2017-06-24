@@ -9,6 +9,19 @@ img {
 	padding: 0px;
 }
 
+a {
+	outline: 0;
+}
+
+a:focus {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: 1px dashed #55c9c9;
+	/*box-shadow: 0 0 5px #55c9c9;*/
+}
+
 /*******************************
 	FONTS, ENTIRE PAGE
 *******************************/

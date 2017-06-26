@@ -644,7 +644,7 @@ div #content .appicon.mouseover img {
 }
 
 /*******************************
-	SKETCHES
+	ILLUSTRATION
 *******************************/
 div #content .plain_img img {
 	display: block;
@@ -654,6 +654,31 @@ div #content .plain_img img {
 	margin-bottom: 0px;
 	padding: 0px;
 	border: 0px;
+}
+
+/*******************************
+	TOGGLE ILLUSTRATION
+*******************************/
+
+div #content .toggle_img {
+	position: relative;
+	margin: 20px auto;
+}
+
+div #content .toggle_img img {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+}
+
+div #content .toggle_img img.top:hover {
+	opacity: 0;
 }
 
 /*******************************

@@ -662,7 +662,7 @@ div #content .plain_img img {
 
 div #content .toggle_img {
 	position: relative;
-	margin: 20px auto;
+	margin: 0px auto;
 }
 
 div #content .toggle_img img {
@@ -671,10 +671,10 @@ div #content .toggle_img img {
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	-webkit-transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-	-o-transition: opacity 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out;
+	-webkit-transition: opacity 0.05s linear;
+	-moz-transition: opacity 0.05s linear;
+	-o-transition: opacity 0.05s linear;
+	transition: opacity 0.05s linear;
 }
 
 div #content .toggle_img img.top:hover {

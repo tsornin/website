@@ -7,18 +7,6 @@ function toggle(img, src1, src2) {
 	img.src = (img.src == src1) ? src2 : src1;
 }
 */
-
-// to make a mouseover toggle (with css styling)
-// https://stackoverflow.com/questions/8184919/css-relative-positioned-parent-div-not-stretching-to-absolute-child-div-height/8185521#8185521
-$(document).ready(function(){
-	$('.toggle_img').each(function(index){
-		var maxHeight = 0;
-		$(this).children().each(function(){
-			maxHeight = Math.max(maxHeight, $(this).height());
-		});
-		$(this).height(maxHeight);
-	});
-});
 </script>
 
 <h3><em>Super Richochet</em> Storyboards</h3>
@@ -37,68 +25,68 @@ A short story about a poor girl being better than a rich boy at blitzball.
 
 <!-- to make a mouseover toggle (with css styling) -->
 <!--
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="height: 100px; width: 100px;">
 	<img class="bottom" src="http://placehold.it/100x100">
 	<img class="top" src="http://placehold.it/101x101">
 </div>
 -->
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 744px">
 	<img class="bottom" src="img/2d/sr/1r.jpg" alt="Super Ricochet Storyboards Rough 1">
 	<img class="top" src="img/2d/sr/1g.png" alt="Super Ricochet Storyboards 1">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 748px">
 	<img class="bottom" src="img/2d/sr/2r.jpg" alt="Super Ricochet Storyboards Rough 2">
 	<img class="top" src="img/2d/sr/2g.png" alt="Super Ricochet Storyboards 2">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 717px">
 	<img class="bottom" src="img/2d/sr/3r.jpg" alt="Super Ricochet Storyboards Rough 3">
 	<img class="top" src="img/2d/sr/3g.png" alt="Super Ricochet Storyboards 3">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 859px">
 	<img class="bottom" src="img/2d/sr/4r.jpg" alt="Super Ricochet Storyboards Rough 4">
 	<img class="top" src="img/2d/sr/4g.png" alt="Super Ricochet Storyboards 4">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 838px">
 	<img class="bottom" src="img/2d/sr/5r.jpg" alt="Super Ricochet Storyboards Rough 5">
 	<img class="top" src="img/2d/sr/5g.png" alt="Super Ricochet Storyboards 5">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 945px">
 	<img class="bottom" src="img/2d/sr/6r.jpg" alt="Super Ricochet Storyboards Rough 6">
 	<img class="top" src="img/2d/sr/6g.png" alt="Super Ricochet Storyboards 6">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 886px">
 	<img class="bottom" src="img/2d/sr/7r.jpg" alt="Super Ricochet Storyboards Rough 7">
 	<img class="top" src="img/2d/sr/7g.png" alt="Super Ricochet Storyboards 7">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 910px">
 	<img class="bottom" src="img/2d/sr/8r.jpg" alt="Super Ricochet Storyboards Rough 8">
 	<img class="top" src="img/2d/sr/8g.png" alt="Super Ricochet Storyboards 8">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 930px">
 	<img class="bottom" src="img/2d/sr/9r.jpg" alt="Super Ricochet Storyboards Rough 9">
 	<img class="top" src="img/2d/sr/9g.png" alt="Super Ricochet Storyboards 9">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 909px">
 	<img class="bottom" src="img/2d/sr/10r.jpg" alt="Super Ricochet Storyboards Rough 10">
 	<img class="top" src="img/2d/sr/10g.png" alt="Super Ricochet Storyboards 10">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 945px">
 	<img class="bottom" src="img/2d/sr/11r.jpg" alt="Super Ricochet Storyboards Rough 11">
 	<img class="top" src="img/2d/sr/11g.png" alt="Super Ricochet Storyboards 11">
 </div>
 
-<div class="plain_img toggle_img">
+<div class="plain_img toggle_img" style="width: 700px; height: 895px">
 	<img class="bottom" src="img/2d/sr/12r.jpg" alt="Super Ricochet Storyboards Rough 12">
 	<img class="top" src="img/2d/sr/12g.png" alt="Super Ricochet Storyboards 12">
 </div>

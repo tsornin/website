@@ -671,7 +671,11 @@ div #content .plain_img img {
 
 div #content .toggle_img {
 	position: relative;
-	margin: 0px auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	box-shadow: 0px 1px 2px darkgray;
 }
 
 div #content .toggle_img img {

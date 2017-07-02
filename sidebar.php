@@ -33,12 +33,40 @@ function rooturl( $path ) {
 			<div id="sidebar_fourth">
 				<h2>&nbsp;</h2>
 			</div>
-
+<!-- 
 			<div id="sidebar_portrait">
-			<div id="portrait">
-				<img src="img/avatar_warby.png" alt="Picture of Bruno">
+				<img class="portrait" src="img/avatar_warby.png" alt="Picture of Bruno">
 			</div>
+ -->
+ 			<a href="https://www.youtube.com/watch?v=ZSS5dEeMX64&amp;t=27s"> 	<!-- be a man! -->
+			<div id="sidebar_portrait_slideshow">
+				<img id="zero" src="img/avatar/spear-0_256.png" alt="Avatar Spear 0">
+				<img id="one" src="img/avatar/spear-1_256.png" alt="Avatar Spear 1">
+				<img id="two" src="img/avatar/spear-2_256.png" alt="Avatar Spear 2">
+				<img id="three" src="img/avatar/spear-3_256.png" alt="Avatar Spear 3">
+				<img id="four" src="img/avatar/spear-0_256.png" alt="Avatar Spear 0">
 			</div>
+			</a>
+			<script>
+			$(document).ready(function(){
+				var stop_slideshow = function(){
+					$("#sidebar_portrait_slideshow #one").stop().animate({opacity:0}, 0);
+					$("#sidebar_portrait_slideshow #two").stop().animate({opacity:0}, 10);
+					$("#sidebar_portrait_slideshow #three").stop().animate({opacity:0}, 20);
+					$("#sidebar_portrait_slideshow #four").stop().animate({opacity:0}, 40);
+				};
+				var start_slideshow = function(){
+					$("#sidebar_portrait_slideshow #one").stop().animate({opacity:0}, 0).animate({opacity:1}, 200);
+					$("#sidebar_portrait_slideshow #two").stop().animate({opacity:0}, 500).animate({opacity:1}, 200);
+					$("#sidebar_portrait_slideshow #three").stop().animate({opacity:0}, 1000).animate({opacity:1}, 200);
+					$("#sidebar_portrait_slideshow #four").stop().animate({opacity:0}, 1100).animate({opacity:1}, 200);
+				}
+
+				stop_slideshow();
+				$("#sidebar_portrait_slideshow").mouseenter(start_slideshow);
+				$("#sidebar_portrait_slideshow").mouseleave(stop_slideshow);
+			});
+			</script>
 
 			<div id="sidebar_blogroll">
 			<div id="sidebar_blogroll_title">

@@ -614,7 +614,7 @@ div #content img {
 }
 
 /* Portrait avatar */
-div #portrait img {
+div img.portrait {
 	width: 112px;
 	height: 112px;
 	display: block;
@@ -622,6 +622,24 @@ div #portrait img {
 	margin-right: auto;
 	border-radius: 50%;
 }
+
+/* Portrait slideshow */
+#sidebar_portrait_slideshow {
+	width: 112px;
+	height: 112px;
+	margin: 0px auto;
+	position: relative;
+}
+
+#sidebar_portrait_slideshow img {
+	width: 112px;
+	height: 112px;
+	border-radius: 50%;
+	position: absolute;
+	margin: 0px;
+}
+
+
 
 /*******************************
 	SHOWCASE

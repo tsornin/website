@@ -54,7 +54,7 @@ function resume_item_title_container( $company, $role, $date, $location ) {
 <!-- story: i wrote this website and resume in PHP + HTML/CSS, but that's the extent of my webmastering abilities -->
 <h3>Bruno Li</h3>
 <h4>
-&nbsp;&nbsp;&nbsp; <!-- stupid way to line up the bullets -->
+&nbsp;&nbsp;&nbsp; <!-- stupid way to line up the bullets to the <h3> -->
 http://bruno-li.com/
 &bull;
 +1 954 253 8097
@@ -77,19 +77,21 @@ bruno.sie.li@gmail.com
 <div class="resume_item">
 <?php echo resume_item_title_container(
 	"Pocket Gems",
-	"Engineer III",
+	"Engineer IV",
 	"June 2012 - Present",
 	"San Francisco, CA"); ?>
 <p>
 	Developed and onboarded new team members to core game architecture. Worked closely with product, art, and QA on both production and live games; seamlessly assumed and improved team engineering conventions. Mentored three (3) interns to full-time offers.
 </p>
 <ul>
+	<!-- aug 2018 to present -->
+	<li><em>Horizon</em> (upcoming) - Prototyped flocking and steering algorithms in Unreal Engine</li>
 	<!-- aug 2016 to aug 2018 -->
-	<li><em>Frontier</em> (unreleased project) - Developed client-server architecture and state replication scheme for real-time multiplayer game in Unity</li>
+	<li><em>Frontier</em> (unreleased) - Developed client-server architecture and state replication scheme for real-time multiplayer game in Unity</li>
 	<!-- feb 2014 to aug 2016 -->
-	<li><em>War Dragons</em> - Delivered features and bugfixes for 3d build-and-battle experience on iOS and Android</li>
+	<li><em>War Dragons</em> - Delivered features and bugfixes for 3D build-and-battle experience on iOS and Android</li>
 	<!-- jun 2012 to feb 2014 -->
-	<li>Casual (studio) - Maintained live-ops monthly agile release cycle; designed "guild" API with server team</li>
+	<li>Casual (studio) - Maintained live-ops monthly agile release cycle<!-- ; designed "guild" API with server team --></li>
 </ul>
 </div>
 
@@ -104,7 +106,7 @@ bruno.sie.li@gmail.com
 	"Austin, TX"); ?>
 <ul>
 	<li>Tutored students in data structures and OOP concepts</li>
-	<li>Improved rendering functionality of annual student programming contest application "Critterfest"</li>
+	<!-- <li>Improved rendering functionality of annual student programming contest application "Critterfest"</li> -->
 </ul>
 </div>
 
@@ -117,7 +119,7 @@ bruno.sie.li@gmail.com
 	"August 2009 - May 2012",
 	"Austin, TX"); ?>
 <p>
-	Turing Scholars Honors Program. <!-- Graduated in three years. --> Emphasis in game technology and physical simulation.
+	Turing Scholars Honors Program. Emphasis in game technology and physics.
 </p>
 <ul>
 	<li>GPA: 3.5/4.0</li>
@@ -144,8 +146,8 @@ bruno.sie.li@gmail.com
 	"August 2011 - May 2012",
 	""); ?>
 <ul>
-	<li>Independent research work combining L-system tree generation with physical simulation</li>
-	<li>Modeled soft-body plants and wind, rain, and fire effects</li>
+	<li>Independent research work combining L-system tree generation with soft-body dynamics</li>
+	<li>Modeled plants with wind, rain, and fire effects</li>
 	<li>Runner-up for UTCS Best Undergraduate Honors Thesis Award 2012</li>
 </ul>
 </div>
@@ -173,8 +175,8 @@ bruno.sie.li@gmail.com
 	Designed and built a 2D physics engine in C++ with OpenGL and SDL, featuring:
 </p>
 <ul>
-	<li>Convex-polygon-based collision detection for rigid bodies and particles</li>
-	<li>Impulse-based rigid body physics with stacking and friction; verlet-based soft-body physics</li>
+	<li>Convex-polygon-based collision detection</li>
+	<li>Impulse-based rigid-body dynamics with stacking and friction + Verlet-based soft-body dynamics</li>
 	<!-- <li>Island detection for rigid body body-contact graph and soft body particle-constraint graph</li> -->
 </ul>
 </div>
@@ -187,25 +189,27 @@ bruno.sie.li@gmail.com
 		ai heuristic - java
 		data crawler - java
  -->
-<h5>SKILLS</h5>
+<h5>TECHNICAL SKILLS</h5>
 
 <div class="resume_item">
-	<strong>Programming languages:</strong>
-		<em>proficient:</em> C#, Objective-C, C++
-		<em>familiar:</em> Java, PHP, Python
-<!-- </div> -->
+	<strong>Languages:</strong>
+		<em>proficient</em> C#
+		<em>familiar</em> C++, Objective-C
 <br>
-<!-- <div class="resume_item"> -->
-	<strong>Other tech:</strong>
-		<em>proficient:</em> Git, Photoshop
-		<em>familiar:</em> HTML/CSS
+	<strong>Engines:</strong>
+		<em>proficient</em> Unity
+		<em>familiar</em> Unreal Engine
+<br>
+	<strong>Other:</strong>
+		<em>proficient</em> Git
+		<em>familiar</em> Perforce, HTML/CSS
 </div>
 
-<h5>OTHER ACTIVITIES</h5>
+<h5>EXTRACURRICULARS</h5>
 
 <div class="resume_item">
 	Speaks Mandarin and Shanghainese; once survived for a week in Japan.
-	Plays piano competently; produces recognizable tunes on the guitar and ocarina.
+	Plays piano acceptably; produces recognizable tunes on the guitar and ocarina.
 	Able to deadlift three hundred and thirty-three (333) pounds.
 </div>
 

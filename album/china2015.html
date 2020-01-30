@@ -1,0 +1,18 @@
+﻿<?php include("precontent.php"); ?>
+
+<script src="js/simpleLightbox.min.js" type="text/javascript"></script>
+<script>
+$( document ).ready( function() {
+	$('.image_gallery a').simpleLightbox();
+});
+</script>
+
+<h3>China 2015</h3>
+<h4>October 2015</h4>
+
+<?php
+	include("image_gallery_of_directory.php");
+	image_gallery_of_directory( 'img/album/china2015' );
+?>
+
+<?php include("postcontent.php"); ?>

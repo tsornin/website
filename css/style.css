@@ -680,6 +680,11 @@ div #content .appicon img {
 	height: 58px;
 	border-radius: 20%;
 	margin-right: 5px;
+	border-color: white; /* remove border of app icons */
+}
+
+div #content .appicon a:focus {
+	outline: 0px; /* remove border of app icons */
 }
 
 div #content .appicon.mouseover img {

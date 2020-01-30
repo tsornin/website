@@ -463,39 +463,51 @@ div #container_all {
 }
 
 div #container_header {
-	width: 960px;
+	/*width: 960px;*/
 }
 
 div #header {
 	height: 80px;
-	width: 896px;
+	/*width: 896px;*/
 	border-bottom: 1px solid gray;
 	/*background: transparent url('img/header-bg_portrait.png') left top;*/
+	position: relative;
 } div #header_sub {
-	margin-top: 8px; /* Because aligning to bottom is too hard */
-	/* margin-bottom: 16px; */
+	margin-top: 0px;
+	margin-bottom: 8px;
 	margin-left: 16px;
 	margin-right: 16px;
-	float: left;
+	/* float: left; */
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
 	text-align: left;
 } div #header_business {
-	margin-top: 8px; /* Because aligning to bottom is too hard */
-	/* margin-bottom: 16px; */
+	margin-top: 0px;
+	margin-bottom: 8px;
 	margin-left: 16px;
 	margin-right: 16px;
-	float: right;
+	/*float: right;*/
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
 	text-align: right;
 }
 
 div #container_content {
-	width: 960px;
+	/*width: 960px;*/
 	background: transparent url('img/sidebar-bg_slant.png') repeat-y left top;
 	clear: both;
 }
 
 	/*
-	We are using Faux Columns for #sidebar and #content (with sidebar-bg.png),
-	so there's no border-right in #sidebar or border-left in #content.
+	#sidebar and #content are in Faux Columns
+	(https://alistapart.com/article/fauxcolumns/)
+	i.e. the #sidebar border-right and #content border-left are faked by background: #container_content.
+
+	One change to Faux Columns:
+	I've turned off widths and manually pushed
+	#content margin-left out so it can scale properly --- 1/29/2020
 	*/
 
 	div #sidebar {
@@ -508,13 +520,17 @@ div #container_content {
 	}
 
 	div #content {
-		float: left;
-		width: 736px; /* 896 - 160 */
+		/* This used to be float: left; width: 736px; which was 896 - 160 */
+		padding: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 160px;
+		margin-right: 0px;
 	} div #content_sub {
-		margin-top: 16px;
-		margin-bottom: 16px;
-		margin-left: 24px;
-		margin-right: 16px;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		padding-left: 24px;
+		padding-right: 16px;
 	}
 
 	div #container_content_clear {
@@ -581,7 +597,7 @@ div #container_content {
 div #footer {
 	clear: both;
 	height: 64px;
-	width: 896px;
+	/* width: 896px; */
 	border-top: 1px solid gray;
 } div #footer_sub {
 	margin-top: 0px;

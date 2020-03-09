@@ -1,0 +1,171 @@
+@font-face {
+	font-family: 'TwCenMT';
+	src: url('type/tw_cen_mt_regular-webfont.eot');
+	src: url('type/tw_cen_mt_regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('type/tw_cen_mt_regular-webfont.woff') format('woff'),
+		url('type/tw_cen_mt_regular-webfont.ttf') format('truetype'),
+		url('type/tw_cen_mt_regular-webfont.svg#TwCenMTRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TwCenMT';
+	src: url('type/Tw-Cen-MT-Bold.eot');
+	src: url('type/Tw-Cen-MT-Bold.eot?#iefix') format('embedded-opentype'),
+		url('type/Tw-Cen-MT-Bold.woff') format('woff'),
+		url('type/Tw-Cen-MT-Bold.ttf') format('truetype'),
+		url('type/Tw-Cen-MT-Bold.svg#TwCenMT-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'TwCenMT';
+	src: url('type/Tw-Cen-MT-Italic.eot');
+	src: url('type/Tw-Cen-MT-Italic.eot?#iefix') format('embedded-opentype'),
+		url('type/Tw-Cen-MT-Italic.woff') format('woff'),
+		url('type/Tw-Cen-MT-Italic.ttf') format('truetype'),
+		url('type/Tw-Cen-MT-Italic.svg#TwCenMT-Italic') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'TwCenMT';
+	src: url('type/Tw-Cen-MT-Bold-Italic.eot');
+	src: url('type/Tw-Cen-MT-Bold-Italic.eot?#iefix') format('embedded-opentype'),
+		url('type/Tw-Cen-MT-Bold-Italic.woff') format('woff'),
+		url('type/Tw-Cen-MT-Bold-Italic.ttf') format('truetype'),
+		url('type/Tw-Cen-MT-Bold-Italic.svg#TwCenMT-BoldItalic') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* CSS reset */
+body, div, p,
+h1, h2, h3, h4, h5, h6,
+ol, ul, li,
+dl, dt, dd,
+th, tr, td,
+img {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	margin: 16px;
+}
+
+body, div, p,
+h1, h2, h3, h4, h5, h6,
+ol, ul, li,
+dl, dt, dd,
+th, tr, td,
+img {
+	font-family: 'TwCenMT', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 32px;
+}
+h2 {
+	font-size: 18px;
+	line-height: 32px;
+	letter-spacing: 0.05em;
+}
+h3 {
+	font-size: 32px;
+	line-height: 48px;
+	text-align: center;
+}
+h4 {
+	font-size: 14px;
+	line-height: 8px;
+	text-align: center;
+	padding-bottom: 8px;
+	color: gray;
+}
+h5 {
+	font-size: 18px;
+	line-height: 32px;
+	text-align: center;
+	border-top: 1px solid gray;
+	padding-top: 0px;
+	margin-top: 12px;
+}
+h6 {
+	font-size: 16px;
+	line-height: 32px;
+}
+
+ul, ol, dl, li {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+ul li {
+	margin-left: 16px;
+	list-style-type: circle;
+}
+ol li {
+	margin-left: 16px;
+	list-style: decimal;
+}
+dl dt {
+	margin-left: 16px;
+	list-style-type: circle;
+	display: list-item;
+}
+dl dd {
+	margin-left: 32px;
+}
+
+code {
+	font-family: "Courier New", monospace;
+	font-size: 14px;
+	line-height: 26px;
+	white-space: nowrap;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	border-top: 1px solid lightgray;
+	/*
+	background-image: -webkit-linear-gradient(left, white, gray, white);
+	background-image:    -moz-linear-gradient(left, white, gray, white);
+	background-image:     -ms-linear-gradient(left, white, gray, white);
+	background-image:      -o-linear-gradient(left, white, gray, white);
+	*/
+}
+
+.center { margin: 0 auto; }
+.right { float: right; }
+.left { float: left; }
+.resume_item_title_container {
+	overflow: hidden;
+	width: 100%;
+}
+.resume_item {
+	margin-bottom: 16px;
+}
+.resume_company {
+	float: left;
+	font-weight: bold;
+}
+.resume_role {
+	float: left;
+	font-style: oblique;
+}
+.resume_date {
+	float: right;
+	color: gray;
+}
+.resume_location {
+	float: right;
+	color: gray;
+}
+

@@ -364,79 +364,6 @@ div #content blockquote:after {
 	content: close-quote;
 }
 
-/** Resume **/
-
-div #resume body,
-div #resume div,
-div #resume p,
-div #resume ol,
-div #resume ul,
-div #resume li,
-div #resume dl,
-div #resume dt,
-div #resume dd,
-div #resume th,
-div #resume tr,
-div #resume td {
-	font-family: 'TwCenMT', sans-serif;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 16px;
-	line-height: 18px;
-}
-div #resume h3 {
-	font-size: 32px;
-	line-height: 48px;
-	text-align: center;
-}
-div #resume h4 {
-	font-size: 14px;
-	line-height: 8px;
-	color: gray;
-	text-align: center;
-}
-div #resume h5 {
-	line-height: 32px;
-	text-align: center;
-	margin-top: 12px;
-	padding-top: 0px;
-}
-div #resume p {
-	margin-bottom: 0px;
-}
-div #resume ul,
-div #resume ol,
-div #resume li {
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.center { margin: 0 auto; }
-.right { float: right; }
-.left { float: left; }
-.resume_item_title_container {
-	overflow: hidden;
-	width: 100%;
-}
-.resume_item {
-	margin-bottom: 16px;
-}
-.resume_company {
-	float: left;
-	font-weight: bold;
-}
-.resume_role {
-	float: left;
-	font-style: oblique;
-}
-.resume_date {
-	float: right;
-	color: gray;
-}
-.resume_location {
-	float: right;
-	color: gray;
-}
-
 /*******************************
 	DIV GEOMETRY
 *******************************/
@@ -654,8 +581,6 @@ div img.portrait {
 	position: absolute;
 	margin: 0px;
 }
-
-
 
 /*******************************
 	SHOWCASE

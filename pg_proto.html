@@ -1,0 +1,163 @@
+<?php include("precontent.php"); ?>
+
+<h3>Prototype Games</h3>
+<h4>2017 - current</h4>
+
+<p>
+At Pocket Gems, for the past several years, I've worked on R&D prototype games &mdash; small, independent, exploratory projects killed in various stages of development. Some highlights from the projects I've worked on include:
+</p>
+
+<!-- frontier -->
+<h5>Real-time multiplayer prototype</h5>
+<h4>2017 - 2018</h4>
+
+<p>
+A game about adventuring with a party. In the absence of satisfactory middleware for real-time multiplayer in Unity, my team rolled its own multiplayer stack. As one of our two networking-focused engineers, I built our game-state replication based on the well-known <a href="https://fabiensanglard.net/quake3/network.php">Quake 3 "delta compression"</a>. (Naturally, I worked closely with the other networking engineer, who built our RPC and <a href="https://en.wikipedia.org/wiki/Entity_component_system">ECS system</a>.)
+</p>
+
+<div id="showcase_inner">
+	<div style="float:left;">
+	<a href="img/pg/multiplayer/diagram.png">
+		<img src="img/pg/multiplayer/diagram-thumb.png"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/multiplayer/diagram.png" ); ?> ]
+	</div>
+	<div style="float:left;">
+	<a href="img/pg/multiplayer/coop.gif">
+		<img src="img/pg/multiplayer/coop_gif-thumb.jpg"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/multiplayer/coop.gif" ); ?> ]
+	</div>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/multiplayer/map.jpg">
+	<img src="img/pg/multiplayer/map-thumb.jpg"></a>
+<a href="img/pg/multiplayer/town.jpg">
+	<img src="img/pg/multiplayer/town-thumb.jpg"></a>
+<a href="img/pg/multiplayer/enemy.png">
+	<img src="img/pg/multiplayer/enemy-thumb.png"></a>
+</div>
+
+<!-- horizon -->
+<h5>Flying prototype</h5>
+<h4>2019</h4>
+
+<p>
+A game about attacking towers with flying monsters. I worked on the core flight systems, researching 1. automatic steering based on the well-known <a href="https://www.red3d.com/cwr/steer/">Reynolds steering behaviors]</a>, and 2. manual steering based on adapting real-world airplane physics.
+</p>
+
+<div id="showcase_inner">
+	<div style="float:left;">
+	<a href="img/pg/flying/intro.gif">
+		<img src="img/pg/flying/intro-thumb.png"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/flying/intro.gif" ); ?> ]
+	</div>
+	<div style="float:left;">
+	<a href="img/pg/flying/roll.gif">
+		<img src="img/pg/flying/roll-thumb.png"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/flying/roll.gif" ); ?> ]
+	</div>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/flying/autojump1.png">
+	<img src="img/pg/flying/autojump1-thumb.png"></a>
+<a href="img/pg/flying/autojump2.png">
+	<img src="img/pg/flying/autojump2-thumb.png"></a>
+<a href="img/pg/flying/autojump3.png">
+	<img src="img/pg/flying/autojump3-thumb.png"></a>
+</div>
+
+<!-- burnemall -->
+<h5>Crowd prototype</h5>
+<h4>2020 - 2021</h4>
+
+<p>
+A game about attacking crowds with giant monsters. I integrated the well-known <a href="https://gamma.cs.unc.edu/RVO2/">Reciprocal Collision Avoidance</a> library to control the behavior of the multitudinous troop units. I was also the tech lead on this project, becoming responsible for planning and executing a mid-project port from Unreal to Unity.
+</p>
+
+<!--
+<div class="plain_img toggle_img" style="width: 600px; height: 292px; float: left;">
+	<img class="bottom" src="img/pg/crowd/app-sketch.png">
+	<img class="top" src="img/pg/crowd/app-color.png">
+</div>
+-->
+
+<div id="showcase_inner">
+	<div style="float:left;">
+	<a href="img/pg/crowd/battle.gif">
+		<img src="img/pg/crowd/battle_gif-thumb.jpg"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/crowd/battle.gif" ); ?> ]
+	</div>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/crowd/base.jpg">
+	<img src="img/pg/crowd/base-thumb.jpg"></a>
+<a href="img/pg/crowd/battle_grass-thumb.png">
+	<img src="img/pg/crowd/battle_grass-thumb.png"></a>
+<a href="img/pg/crowd/battle_ice.jpg">
+	<img src="img/pg/crowd/battle_ice-thumb.jpg"></a>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/crowd/rvo1.png">
+	<img src="img/pg/crowd/rvo1-thumb.png"></a>
+<a href="img/pg/crowd/rvo2.png">
+	<img src="img/pg/crowd/rvo2-thumb.png"></a>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/crowd/app_sketch.png">
+	<img src="img/pg/crowd/app_sketch-thumb.png"></a>
+<a href="img/pg/crowd/app_color.png">
+	<img src="img/pg/crowd/app_color-thumb.png"></a>
+</div>
+
+<!-- creature-ranch -->
+<h5>Collector prototype</h5>
+<h4>2022</h4>
+
+<p>
+A game about collecting monsters (and merging items, following the company's <a href="https://www.pocketgamer.biz/interview/77737/adventure-chef-merge-explorer-inspired-by-long-drives-and-manga/">efforts</a> on <a href="https://pocketgems.com/adventure-chef/"><em>Adventure Chef</em></a>).) I was the sole engineer on this project, designing architecture and building tools to keep designers productive.
+</p>
+
+<div id="showcase_inner">
+	<div style="float:left;">
+	<a href="img/pg/collector/merge.gif">
+		<img src="img/pg/collector/merge_gif-thumb.jpg"></a>
+	<br>
+	[ <?php echo filelinkandsize( "img/pg/collector/merge.gif" ); ?> ]
+	</div>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/collector/base.png">
+	<img src="img/pg/collector/base-thumb.png"></a>
+<a href="img/pg/collector/battle.png">
+	<img src="img/pg/collector/battle-thumb.png"></a>
+<a href="img/pg/collector/dialogue.png">
+	<img src="img/pg/collector/dialogue-thumb.png"></a>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/collector/merge.png">
+	<img src="img/pg/collector/merge-thumb.png"></a>
+<a href="img/pg/collector/merge2.png">
+	<img src="img/pg/collector/merge2-thumb.png"></a>
+</div>
+
+<div id="showcase_inner">
+<a href="img/pg/collector/monsters.png">
+	<img src="img/pg/collector/monsters-thumb.png"></a>
+<a href="img/pg/collector/monster.png">
+	<img src="img/pg/collector/monster-thumb.png"></a>
+<a href="img/pg/collector/ambient.png">
+	<img src="img/pg/collector/ambient-thumb.png"></a>
+</div>
+
+<?php include("postcontent.php"); ?>

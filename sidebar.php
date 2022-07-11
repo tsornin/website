@@ -6,39 +6,47 @@ function rooturl( $path ) {
 		<div id="sidebar">
 
 			<div id="sidebar_first">
-				<h2><img src="<?=rooturl( "img/flagicon-code.png" ); ?>">code</h2>
+				<h2><img src="<?=rooturl("img/flagicon-code.png"); ?>">code</h2>
 				<ul>
-					<li><a href="<?=rooturl( "umbrella.html" ); ?>">Physics</a></li>
-					<li><a href="<?=rooturl( "thesis.html" ); ?>">Thesis</a></li>
-					<!-- <li><a href="<?=rooturl( "fluid.html" ); ?>">Fluid</a></li> -->
+					<li><a href="<?=rooturl("pg_proto.html"); ?>">Prototypes</a></li>
+					<li><a href="<?=rooturl("pg_ship.html"); ?>">Titles</a></li>
+					<li><a href="<?=rooturl("umbrella.html"); ?>">2D Physics</a></li>
+					<li><a href="<?=rooturl("thesis.html"); ?>">Thesis</a></li>
+					<!-- <li><a href="<?=rooturl("fluid.html"); ?>">Fluid</a></li> -->
 				</ul>
 			</div>
 
 			<div id="sidebar_second">
-				<h2><img src="<?=rooturl( "img/flagicon-art.png" ); ?>">art</h2>
+				<h2><img src="<?=rooturl("img/flagicon-art.png"); ?>">art</h2>
 				<ul>
-					<li><a href="<?=rooturl( "art2d-design.html" ); ?>">Design</a></li>
-					<li><a href="<?=rooturl( "art2d-illustration.html" ); ?>">Illustration</a></li>
-					<!-- <li><a href="<?=rooturl( "art3d.html" ); ?>">Modeling</a></li> -->
+					<li><a href="<?=rooturl("art2d-design.html"); ?>">Design</a></li>
+					<li><a href="<?=rooturl("art2d-illustration.html"); ?>">Illustration</a></li>
+					<!-- <li><a href="<?=rooturl("art3d.html"); ?>">Modeling</a></li> -->
 				</ul>
 			</div>
-<!-- 
+
+<!--
 			<div id="sidebar_third">
-				<h2><img src="<?=rooturl( "img/flagicon-info.png" ); ?>">info</h2>
+				<h2><img src="<?=rooturl("img/flagicon-info.png"); ?>">toys</h2>
 				<ul>
-					<li><a href="<?=rooturl( "index.html" ); ?>">About</a></li>
+					<li><a href="<?=rooturl("index.html"); ?>">Computers</a></li>
+					<li><a href="<?=rooturl("index.html"); ?>">Bicycles</a></li>
+					<li><a href="<?=rooturl("index.html"); ?>">Cats</a></li>
 				</ul>
 			</div>
- -->
+-->
+
 			<div id="sidebar_fourth">
 				<h2>&nbsp;</h2>
 			</div>
-<!-- 
+
 			<div id="sidebar_portrait">
-				<img class="portrait" src="img/avatar_warby.png" alt="Picture of Bruno">
+				<img class="portrait" src="img/avatar/gg-256.jpg" alt="Picture of Bruno">
 			</div>
- -->
- 			<a href="https://www.youtube.com/watch?v=ZSS5dEeMX64&amp;t=27s"> 	<!-- be a man! -->
+
+<!-- a href="https://www.youtube.com/watch?v=ZSS5dEeMX64&amp;t=27s -->
+<!-- be a man! -->
+<!--
 			<div id="sidebar_portrait_slideshow">
 				<img id="zero" src="img/avatar/spear-0_256.png" alt="Avatar Spear 0">
 				<img id="one" src="img/avatar/spear-1_256.png" alt="Avatar Spear 1">
@@ -67,6 +75,7 @@ function rooturl( $path ) {
 				$("#sidebar_portrait_slideshow").mouseleave(stop_slideshow);
 			});
 			</script>
+-->
 
 			<div id="sidebar_blogroll">
 			<div id="sidebar_blogroll_title">
@@ -74,10 +83,11 @@ function rooturl( $path ) {
 			</div>
 			<div id="sidebar_blogroll_links">
 				<a href="http://xkcd.com/">xkcd</a>
+				<a href="https://killsixbilliondemons.com/">KSBD</a>
 				<a href="http://slatestarcodex.com/">Slate Star Codex</a>
 				<a href="http://www.theeffectiveengineer.com/">The Effective Engineer</a>
+				<a href="https://startingstrength.com/">Starting Strength</a>
 				<a href="http://putthison.com/">Put This On</a>
-				<a href="https://www.reddit.com/r/fitness">r/fitness</a>
 			</div>
 			</div>
 

@@ -1,7 +1,7 @@
-# serve HTML as PHP
+## serve HTML as PHP. see README
 
-# on xampp 3.2.4, this normal thing worked fine
-#AddType application/x-httpd-php .html
+# on xampp 3.2.4 (and 3.3.0), this normal thing worked fine
+#AddType application/x-httpd-php .html .htm
 
 # previously, on xampp 3.2.1, i had to add this weird php thing
 #AddHandler fcgid-script .html
@@ -9,7 +9,9 @@
 
 # on dreamhost, the cgi is here:
 #AddHandler fcgid-script .html
-#FCGIWrapper "/dh/cgi-system/php72.cgi" .html
+#FCGIWrapper "/dh/cgi-system/php72.cgi" .html .htm
+
+## other settings
 
 # disable directory browsing
 Options All -Indexes
@@ -17,8 +19,8 @@ Options All -Indexes
 # prevent folder listing
 IndexIgnore *
 
-# 404
+# 404 not found
 ErrorDocument 404 /404.html
 
-# 403
+# 403 forbidden
 ErrorDocument 403 /403.html

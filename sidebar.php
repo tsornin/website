@@ -40,12 +40,12 @@ function rooturl( $path ) {
 				<h2>&nbsp;</h2>
 			</div>
 
+<!-- normal portrait -->
 			<div id="sidebar_portrait">
-				<img class="portrait" src="img/avatar/gg-256.jpg" alt="Picture of Bruno">
+				<img class="portrait" src="<?=rooturl("img/avatar/gg-256.jpg"); ?>" alt="Picture of Bruno">
 			</div>
 
-<!-- a href="https://www.youtube.com/watch?v=ZSS5dEeMX64&amp;t=27s -->
-<!-- be a man! -->
+<!-- slideshow portrait -->
 <!--
 			<div id="sidebar_portrait_slideshow">
 				<img id="zero" src="img/avatar/spear-0_256.png" alt="Avatar Spear 0">

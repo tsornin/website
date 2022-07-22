@@ -286,6 +286,14 @@ div #content a[href^="http"] {
 	background: url('img/external_arrow.png') center right no-repeat;
 	padding-right: 12px;
 }
+div #content a[href^="http://localhost"] {
+	background: none;
+	padding-right: 0px;
+}
+div #content a[href^="http://bruno-li.com"] {
+	background: none;
+	padding-right: 0px;
+}
 
 /* Image link hover effect */
 div #content img {

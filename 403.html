@@ -1,8 +1,12 @@
 ﻿<?php include("precontent.php"); ?>
 
 <h3>403 Forbidden</h3>
-<h4>Date unknown</h4>
+<h4><?php echo date("Y") ?></h4>
 
-<img src="img/wyac-600.jpg" alt="403 Cat">
+<p>
+<a href="<?=rooturl("index.html"); ?>">Home</a>.
+</p>
+
+<img src="<?=rooturl("img/wyac-600.jpg"); ?>" alt="404 Cat">
 
 <?php include("postcontent.php"); ?>

@@ -1,8 +1,12 @@
 ﻿<?php include("precontent.php"); ?>
 
 <h3>404 Not Found</h3>
-<h4>Date unknown</h4>
+<h4><?php echo date("Y") ?></h4>
 
-<img src="img/cat_casta-600.jpg" alt="404 Cat">
+<p>
+<a href="<?=rooturl("index.html"); ?>">Home</a>.
+</p>
+
+<img src="<?=rooturl("img/cat_casta-600.jpg"); ?>" alt="404 Cat">
 
 <?php include("postcontent.php"); ?>

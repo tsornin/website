@@ -1,7 +1,7 @@
 	<div id="container_header">
 		<div id="header">
 		<div id="header_sub">
-			<h1><a href="<?php echo "http://" . $_SERVER['SERVER_NAME']; ?>">Bruno Li</a></h1>
+			<h1><a href="<?php echo "//" . $_SERVER['SERVER_NAME']; ?>">Bruno Li</a></h1>
 			<p>
 			<!--<img src="img/favicon-pg2_16x16.png">-->
 			<a href="https://www.linkedin.com/in/bruno-li-b1679a56/">Sushi Eater IV</a>

@@ -1,7 +1,7 @@
 <head>
 	<title>Bruno Li</title>
-	<link href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/"; ?>css/style.css" rel="stylesheet" type="text/css">
-	<link href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . "/"; ?>js/simpleLightbox.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="js/simpleLightbox.min.css" rel="stylesheet" type="text/css">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!-- http://www.favicomatic.com/ -->
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
